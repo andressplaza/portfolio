@@ -40,7 +40,7 @@ section {
 }
 
 #inicio {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("img/fondo-inicio.jpg");
+    background-color: black;
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -115,26 +115,40 @@ section {
     padding: 100px 15px;
     color: #111135;
     display: flex;
+
+}
+
+#contenedor-sobremi {
+    background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='%23000000'%3E%3Cpath d='M0,0 L0,70 Q100,70 200,90 T400,80 T600,110 T800,90 T1000,80 L1000,0 Z' /%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: top;
+    
 }
 
 #sobremi .contenedor-foto {
     max-width: 400px;
     margin-right: 80px;
-    position: relative; /* Asegura que el posicionamiento relativo se aplica al pseudo-elemento */
+    position: relative;
+    /* Asegura que el posicionamiento relativo se aplica al pseudo-elemento */
 }
 
 #sobremi .contenedor-foto::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -50px; /* Distancia de la sombra */
+    bottom: -50px;
+    /* Distancia de la sombra */
     width: 100%;
-    height: 10px; /* Grosor de la sombra */
-    background: rgba(0, 0, 0, 0.1); /* Color de la sombra */
-    z-index: -1; /* Asegura que la sombra esté detrás del contenido */
+    height: 10px;
+    /* Grosor de la sombra */
+    background: rgba(0, 0, 0, 0.1);
+    /* Color de la sombra */
+    z-index: -1;
+    /* Asegura que la sombra esté detrás del contenido */
     border-radius: 75%;
+    filter: blur(5px);
+    /* Difuminación */
 }
-
 
 #sobremi .contenedor-foto img {
     padding: 20px;
