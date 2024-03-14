@@ -126,7 +126,7 @@ section {
 }
 
 #sobremi .contenedor-foto {
-    max-width: 400px;
+    max-width: 600px;
     margin-right: 80px;
     position: relative;
     /* Asegura que el posicionamiento relativo se aplica al pseudo-elemento */
@@ -151,10 +151,9 @@ section {
 }
 
 #sobremi .contenedor-foto img {
-    padding: 20px;
+   
     width: 100%;
     border-radius: 20px;
-    background-color: #f3f3f3;
 }
 
 #sobremi .sobremi {
