@@ -33,6 +33,8 @@ section {
 }
 
 
+
+
 .show {
     opacity: 1;
     filter: blur(0);
@@ -40,7 +42,7 @@ section {
 }
 
 #inicio {
-    background-color: black;
+    background-color: #a0e2b3;
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -112,52 +114,43 @@ section {
 #sobremi {
     max-width: 1100px;
     margin: auto;
-    padding: 100px 15px;
     color: #111135;
-    display: flex;
+    text-align: center;
 
+}
+
+#sobremi a {
+
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 20px 25px;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .5s;
 }
 
 #contenedor-sobremi {
-    background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='%23000000'%3E%3Cpath d='M0,0 L0,70 Q100,70 200,90 T400,80 T600,110 T800,90 T1000,80 L1000,0 Z' /%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: top;
-    
+    display: grid;
+    border: 1rem;
 }
 
 #sobremi .contenedor-foto {
-    max-width: 600px;
-    margin-right: 80px;
-    position: relative;
-    /* Asegura que el posicionamiento relativo se aplica al pseudo-elemento */
-}
-
-#sobremi .contenedor-foto::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -50px;
-    /* Distancia de la sombra */
-    width: 100%;
-    height: 10px;
-    /* Grosor de la sombra */
-    background: rgba(0, 0, 0, 0.1);
-    /* Color de la sombra */
-    z-index: -1;
-    /* Asegura que la sombra esté detrás del contenido */
-    border-radius: 75%;
-    filter: blur(5px);
-    /* Difuminación */
+    max-width: 200px;
+    display: inline-block;
 }
 
 #sobremi .contenedor-foto img {
-   
+
     width: 100%;
     border-radius: 20px;
 }
 
 #sobremi .sobremi {
-    margin: 0 40px;
+    margin: 3rem 5rem;
 }
 
 #sobremi .sobremi .titulo-seccion {
@@ -179,6 +172,8 @@ section {
 #sobremi .sobremi h2 span {
     color: #ff5080;
 }
+
+
 
 #sobremi .sobremi h3 {
     font-size: 18px;
