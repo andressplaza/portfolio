@@ -42,10 +42,11 @@ section {
 }
 
 #inicio {
-    background-color: #a0e2b3;
+    background: url(img/wave-haikei.svg);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
     height: 100vh;
+
 }
 
 
@@ -83,6 +84,7 @@ section {
     margin: 25px auto;
     font-size: 18px;
     text-align: center;
+    font-size: large;
 }
 
 #inicio .contenido .presentacion a {
@@ -102,9 +104,10 @@ section {
     background-color: #ff5080;
 }
 
-#icono-nav {
-    color: #fff;
-    display: none;
+
+
+.layer1 {
+    background-image:url(img/waves.svg);
 }
 
 /* *********************/
@@ -115,7 +118,7 @@ section {
     max-width: 1100px;
     margin: auto;
     color: #111135;
-    text-align: center;
+    display: grid;
 
 }
 
@@ -134,23 +137,12 @@ section {
 }
 
 #contenedor-sobremi {
-    display: grid;
     border: 1rem;
 }
 
-#sobremi .contenedor-foto {
-    max-width: 200px;
-    display: inline-block;
-}
-
-#sobremi .contenedor-foto img {
-
-    width: 100%;
-    border-radius: 20px;
-}
 
 #sobremi .sobremi {
-    margin: 3rem 5rem;
+    margin: 1rem 2rem;
 }
 
 #sobremi .sobremi .titulo-seccion {
@@ -347,7 +339,7 @@ section {
     /* seccion SOBRE MI */
     #sobremi {
         padding: 50px 0;
-        display: block;
+        display: grid;
     }
 
     #sobremi .contenedor-foto {
@@ -359,7 +351,7 @@ section {
         padding: 8px;
     }
 
-    #sobremi .sobremi .titulo-seccion {
+    #sobremi .sobremi{
         text-align: center;
     }
 
