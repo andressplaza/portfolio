@@ -379,9 +379,13 @@ nav ul li a:hover {
 
 html,
 body {
-    width: 100wh;
     scroll-behavior: smooth;
     background-image: radial-gradient(ellipse at top, #080e21 0%, #1b2735 95%);
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
 }
 
 
