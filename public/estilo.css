@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 nav {
-    background-color: #333;
+    background-color: #636363;
     padding: 10px 0;
     text-align: center;
 }
+
+
 
 nav ul {
     list-style-type: none;
@@ -383,6 +385,7 @@ body {
     background-image: radial-gradient(ellipse at top, #080e21 0%, #1b2735 95%);
 }
 
+
 .container {
     position: relative;
     overflow: hidden;
@@ -399,18 +402,18 @@ section {
     min-height: 100vh;
 }
 
+
+/* Inicialmente, el elemento estará oculto y desplazado hacia la derecha */
 .hidden {
     opacity: 0;
-    filter: blur(200px);
-    transition: all 1s
+    transform: translateX(100%);
+    transition: opacity 1s, transform 1s;
 }
 
-
-
-
+/* Cuando el elemento se muestre, la opacidad será 1 y no habrá desplazamiento */
 .show {
     opacity: 1;
-    filter: blur(0);
+    transform: translateX(0%);
 }
 
 
@@ -418,7 +421,7 @@ section {
     max-width: 1100px;
     height: 100vh;
     margin: auto;
-    color: #000000;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -492,6 +495,10 @@ section {
 /* seccion S O B R E  M I */
 /* *********************/
 
+.text-sobremi {
+}
+
+
 #sobremi {
     max-width: 1100px;
     margin: auto;
@@ -508,8 +515,9 @@ section {
 
 
 #sobremi .sobremi {
-    margin: 1rem 2rem;
+    border-radius: 3rem;
     background-color: whitesmoke;
+    padding: 1rem 3rem;
 }
 
 #sobremi .sobremi .titulo-seccion {
@@ -620,8 +628,9 @@ section {
     background-color: #fff;
     padding: 30px;
     margin: 0 5px;
-    border-radius: 5px;
     transition: .5s;
+    border-radius: 3rem;
+
 }
 
 #servicios .fila .servicio:hover {
