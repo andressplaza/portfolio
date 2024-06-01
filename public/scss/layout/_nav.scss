@@ -1,0 +1,29 @@
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas: espacio automático para el logo, espacio restante para el menú, y espacio automático para los íconos de redes sociales */
+    align-items: center;
+  }
+  
+  .logo img {
+    width: auto;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos del menú al final de su contenedor */
+  }
+  
+  ul li {
+    margin-left: 20px; /* Espacio entre elementos del menú */
+  }
+  
+  ul li:first-child {
+    margin-left: 0; /* Quita el margen izquierdo del primer elemento del menú */
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #fff; /* Color de texto del menú */
+  }
+  
