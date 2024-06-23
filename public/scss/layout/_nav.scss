@@ -1,29 +1,73 @@
 nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas: espacio automático para el logo, espacio restante para el menú, y espacio automático para los íconos de redes sociales */
-    align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Cambiamos la estructura de columnas para adaptarla mejor */
+  align-items: center;
+  padding: 10px;
+}
+
+.logo img {
+  max-width: 200px; /* Ancho máximo del logo */
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Alinea el menú al centro en dispositivos grandes */
+}
+
+ul li {
+  margin: 0 10px; /* Espacio horizontal entre elementos del menú */
+}
+
+ul li:first-child {
+  margin-left: 0; /* Quita el margen izquierdo del primer elemento */
+}
+
+.dark-mode {
+  display: flex;
+  justify-content: flex-end; /* Alinea el modo oscuro a la derecha */
+  align-items: center; /* Centra verticalmente */
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff; /* Color de texto del menú */
+}
+
+/* Media queries para hacer responsive */
+
+@media screen and (max-width: 768px) {
+  nav {
+      grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
+      justify-items: center; /* Centra todos los elementos */
+      text-align: center; /* Alinea el texto al centro */
   }
-  
-  .logo img {
-    width: auto;
+
+  nav ul {
+    margin-top: 1rem;
   }
-  
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos del menú al final de su contenedor */
+
+  .dark-mode {  
+    display: none;
   }
+
+}
+
+  @media screen and (max-width: 468px) {
+    nav {
+        grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
+        justify-items: center; /* Centra todos los elementos */
+        text-align: center; /* Alinea el texto al centro */
+    }
   
-  ul li {
-    margin-left: 20px; /* Espacio entre elementos del menú */
+    nav ul {
+      display: none;
+    }
+  
+    .dark-mode {  
+      display: none;
+    }
+  
   }
-  
-  ul li:first-child {
-    margin-left: 0; /* Quita el margen izquierdo del primer elemento del menú */
-  }
-  
-  ul li a {
-    text-decoration: none;
-    color: #fff; /* Color de texto del menú */
-  }
-  
