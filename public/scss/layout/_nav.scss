@@ -1,6 +1,9 @@
+header{
+padding-top: 2rem;
+}
 nav {
   display: grid;
-  grid-template-columns: auto 1fr auto; /* Cambiamos la estructura de columnas para adaptarla mejor */
+  grid-template-columns: 1fr 1fr 1fr; /* Cambiamos la estructura de columnas para adaptarla mejor */
   align-items: center;
   padding: 10px;
 }

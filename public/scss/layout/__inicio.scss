@@ -1,21 +1,26 @@
 .inicio{
-    margin-top: 12vh;
-    height: 100vh;
+    display: flex;
+    justify-content: center;  // Centramos horizontalmente
+    align-items: center;     // Centramos verticalmente
+    height: 100vh;           // Aseguramos que la sección ocupa toda la altura de la pantalla
+    color: black;
 }
 
 .inicio-contenido {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px; /* Espacio entre columnas, ajusta según necesites */
+    gap: 3rem; /* Espacio entre columnas, ajusta según necesites */
+    
 
 }
 
 .card {
+    border: 2px solid white;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    opacity: 65%;
+    border-radius: 1rem;
     padding: 20px;
+    font-size: smaller;
 }
 
 .card-img {
