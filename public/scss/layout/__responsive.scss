@@ -1,0 +1,27 @@
+/* Media queries para hacer responsive */
+@media screen and (max-width: 768px) {
+    nav {
+      grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
+      justify-items: center; /* Centra todos los elementos */
+      text-align: center; /* Alinea el texto al centro */
+    }
+    nav ul {
+      margin-top: 1rem;
+    }
+    .dark-mode {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 468px) {
+    nav {
+      grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
+      justify-items: center; /* Centra todos los elementos */
+      text-align: center; /* Alinea el texto al centro */
+    }
+    nav ul {
+      display: none;
+    }
+    .dark-mode {
+      display: none;
+    }
+  }
