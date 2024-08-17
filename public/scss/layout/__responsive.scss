@@ -1,5 +1,5 @@
 /* Media queries para hacer responsive */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     nav {
       grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
       justify-items: center; /* Centra todos los elementos */
@@ -8,11 +8,11 @@
     nav ul {
       margin-top: 1rem;
     }
-    .dark-mode {
+    .social-media {
       display: none;
     }
   }
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 600px) {
     nav {
       grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
       justify-items: center; /* Centra todos los elementos */
@@ -21,7 +21,7 @@
     nav ul {
       display: none;
     }
-    .dark-mode {
+    .social-media {
       display: none;
     }
   }

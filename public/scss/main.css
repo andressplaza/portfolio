@@ -96,73 +96,104 @@ html, body {
   overflow: hidden;
 }
 
-header {
-  padding-top: 2rem;
+.header {
+  padding: 1rem 2rem;
 }
 
 nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Cambiamos la estructura de columnas para adaptarla mejor */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
 }
 
-.logo img {
-  max-width: 200px; /* Ancho máximo del logo */
-  height: auto;
-  display: block;
+.logo {
+  flex: 1;
+  text-align: left;
+  margin-right: auto; /* Asegura que el logo esté pegado a la izquierda */
 }
 
-ul {
+.nav-links {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
   list-style: none;
-  display: flex;
-  justify-content: center; /* Alinea el menú al centro en dispositivos grandes */
+  margin: 0;
+  padding: 0;
 }
 
-ul li {
-  margin: 0 10px; /* Espacio horizontal entre elementos del menú */
-}
-
-ul li:first-child {
-  margin-left: 0; /* Quita el margen izquierdo del primer elemento */
-}
-
-.dark-mode {
-  display: flex;
-  justify-content: flex-end; /* Alinea el modo oscuro a la derecha */
-  align-items: center; /* Centra verticalmente */
-}
-
-ul li a {
+.nav-links a {
   text-decoration: none;
-  color: #fff; /* Color de texto del menú */
+  color: white;
 }
 
-/* Media queries para hacer responsive */
-@media screen and (max-width: 768px) {
-  nav {
-    grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
-    justify-items: center; /* Centra todos los elementos */
-    text-align: center; /* Alinea el texto al centro */
-  }
-  nav ul {
-    margin-top: 1rem;
-  }
-  .dark-mode {
-    display: none;
-  }
+.social-media {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
-@media screen and (max-width: 468px) {
-  nav {
-    grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
-    justify-items: center; /* Centra todos los elementos */
-    text-align: center; /* Alinea el texto al centro */
+
+.social-media a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilos para el menú de hamburguesa */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 9999; /* Asegura que esté sobre todo lo demás */
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
-  nav ul {
+  .nav-links {
+    display: none; /* Oculta los enlaces en pantallas pequeñas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con transparencia */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9998; /* Asegura que esté justo debajo del botón de hamburguesa */
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger .fa-bars {
+    display: block;
+  }
+  .hamburger .fa-times {
     display: none;
   }
-  .dark-mode {
+  .nav-links.show ~ .hamburger .fa-bars {
     display: none;
+  }
+  .nav-links.show ~ .hamburger .fa-times {
+    display: block;
+  }
+  .social-media {
+    display: none; /* Oculta las redes sociales en pantallas pequeñas */
   }
 }
 .inicio {
@@ -204,7 +235,7 @@ ul li a {
 }
 
 /* Media queries para hacer responsive */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   nav {
     grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
     justify-items: center; /* Centra todos los elementos */
@@ -213,11 +244,11 @@ ul li a {
   nav ul {
     margin-top: 1rem;
   }
-  .dark-mode {
+  .social-media {
     display: none;
   }
 }
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 600px) {
   nav {
     grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
     justify-items: center; /* Centra todos los elementos */
@@ -226,19 +257,19 @@ ul li a {
   nav ul {
     display: none;
   }
-  .dark-mode {
+  .social-media {
     display: none;
   }
 }
 .meteor-1 {
   position: absolute;
-  top: 189px;
-  left: 27%;
+  top: 274px;
+  left: 24%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 6.6s linear infinite;
+  animation: meteor 3.2s linear infinite;
 }
 .meteor-1:before {
   content: "";
@@ -253,13 +284,13 @@ ul li a {
 
 .meteor-2 {
   position: absolute;
-  top: 125px;
-  left: 36%;
+  top: 81px;
+  left: 45%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.9s linear infinite;
+  animation: meteor 8.9s linear infinite;
 }
 .meteor-2:before {
   content: "";
@@ -274,13 +305,13 @@ ul li a {
 
 .meteor-3 {
   position: absolute;
-  top: 157px;
-  left: 89%;
+  top: 205px;
+  left: 10%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 3.8s linear infinite;
+  animation: meteor 3.6s linear infinite;
 }
 .meteor-3:before {
   content: "";
@@ -295,13 +326,13 @@ ul li a {
 
 .meteor-4 {
   position: absolute;
-  top: 125px;
-  left: 51%;
+  top: 107px;
+  left: 15%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 8.4s linear infinite;
+  animation: meteor 8.2s linear infinite;
 }
 .meteor-4:before {
   content: "";
@@ -316,13 +347,13 @@ ul li a {
 
 .meteor-5 {
   position: absolute;
-  top: 54px;
-  left: 43%;
+  top: 88px;
+  left: 97%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 7.6s linear infinite;
+  animation: meteor 8s linear infinite;
 }
 .meteor-5:before {
   content: "";
@@ -338,12 +369,12 @@ ul li a {
 .meteor-6 {
   position: absolute;
   top: 271px;
-  left: 62%;
+  left: 15%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.7s linear infinite;
+  animation: meteor 4.7s linear infinite;
 }
 .meteor-6:before {
   content: "";
@@ -358,13 +389,13 @@ ul li a {
 
 .meteor-7 {
   position: absolute;
-  top: 88px;
-  left: 39%;
+  top: 260px;
+  left: 41%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 8.4s linear infinite;
+  animation: meteor 3.6s linear infinite;
 }
 .meteor-7:before {
   content: "";
@@ -379,13 +410,13 @@ ul li a {
 
 .meteor-8 {
   position: absolute;
-  top: 52px;
-  left: 67%;
+  top: 170px;
+  left: 73%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.3s linear infinite;
+  animation: meteor 8.2s linear infinite;
 }
 .meteor-8:before {
   content: "";
@@ -400,13 +431,13 @@ ul li a {
 
 .meteor-9 {
   position: absolute;
-  top: 220px;
-  left: 97%;
+  top: 77px;
+  left: 55%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.9s linear infinite;
+  animation: meteor 5.7s linear infinite;
 }
 .meteor-9:before {
   content: "";
@@ -421,13 +452,13 @@ ul li a {
 
 .meteor-10 {
   position: absolute;
-  top: 213px;
-  left: 20%;
+  top: 157px;
+  left: 68%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 7s linear infinite;
+  animation: meteor 5.3s linear infinite;
 }
 .meteor-10:before {
   content: "";
@@ -442,13 +473,13 @@ ul li a {
 
 .meteor-11 {
   position: absolute;
-  top: 110px;
-  left: 53%;
+  top: 59px;
+  left: 42%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.1s linear infinite;
+  animation: meteor 3.1s linear infinite;
 }
 .meteor-11:before {
   content: "";
@@ -463,13 +494,13 @@ ul li a {
 
 .meteor-12 {
   position: absolute;
-  top: 211px;
-  left: 65%;
+  top: 184px;
+  left: 15%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.8s linear infinite;
+  animation: meteor 5.5s linear infinite;
 }
 .meteor-12:before {
   content: "";
@@ -484,13 +515,13 @@ ul li a {
 
 .meteor-13 {
   position: absolute;
-  top: 228px;
-  left: 80%;
+  top: 179px;
+  left: 14%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.7s linear infinite;
+  animation: meteor 6.2s linear infinite;
 }
 .meteor-13:before {
   content: "";
@@ -505,13 +536,13 @@ ul li a {
 
 .meteor-14 {
   position: absolute;
-  top: 262px;
-  left: 13%;
+  top: 259px;
+  left: 92%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 7.2s linear infinite;
+  animation: meteor 5.7s linear infinite;
 }
 .meteor-14:before {
   content: "";
@@ -526,13 +557,13 @@ ul li a {
 
 .meteor-15 {
   position: absolute;
-  top: 155px;
-  left: 14%;
+  top: 100px;
+  left: 31%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.7s linear infinite;
+  animation: meteor 4s linear infinite;
 }
 .meteor-15:before {
   content: "";
@@ -547,13 +578,13 @@ ul li a {
 
 .meteor {
   position: absolute;
-  top: 141px;
-  left: 54%;
+  top: 275px;
+  left: 46%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
   background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 6.4s linear infinite;
+  animation: meteor 5.8s linear infinite;
 }
 .meteor::before {
   content: "";
