@@ -55,7 +55,7 @@ nav {
   z-index: 9999; /* Asegura que esté sobre todo lo demás */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .hamburger {
       display: block;
   }
