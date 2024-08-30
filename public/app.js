@@ -25,3 +25,19 @@ document.querySelector('.hamburger').addEventListener('click', function() {
     barsIcon.style.display = barsIcon.style.display === 'none' ? 'block' : 'none';
     timesIcon.style.display = timesIcon.style.display === 'none' ? 'block' : 'none';
 });
+
+
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    preloader.style.display = 'none';
+});
+
+document.querySelectorAll('.groovy').forEach(function(element) {
+    element.addEventListener('mouseenter', function() {
+        element.style.animation = 'pulse 1s infinite';
+    });
+
+    element.addEventListener('mouseleave', function() {
+        element.style.animation = 'none';
+    });
+});

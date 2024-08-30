@@ -29,8 +29,13 @@
   transform: translateX(0%);
 }
 
-.shine:hover {
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 75px #ffffff;
+.groovy {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.groovy:hover {
+  transform: scale(1.1);
 }
 
 * {
@@ -71,7 +76,7 @@
 }
 body {
   font-family: "SpaceGrotesk";
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: larger;
   cursor: url("../../img/dedo.png"), auto;
 }
@@ -81,11 +86,43 @@ a {
 }
 
 html, body {
-  background-image: radial-gradient(ellipse at top, #080e21 0%, #1b2735 95%);
+  background: #dfdfdf;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.loader {
+  display: block;
+  width: 84px;
+  height: 84px;
+  position: relative;
+}
+
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #FFF;
+  transform: translate(-50%, -100%) scale(0);
+  animation: push_401 2s infinite linear;
+}
+
+.loader:after {
+  animation-delay: 1s;
+}
+
+@keyframes push_401 {
+  0%, 50% {
+    transform: translate(-50%, 0%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -100%) scale(0);
+  }
+}
 .container {
   margin: auto;
   width: 80%;
@@ -97,7 +134,10 @@ html, body {
 }
 
 .header {
-  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  z-index: 1000;
 }
 
 nav {
@@ -109,7 +149,8 @@ nav {
 .logo {
   flex: 1;
   text-align: left;
-  margin-right: auto; /* Asegura que el logo esté pegado a la izquierda */
+  margin-right: auto;
+  /* Asegura que el logo esté pegado a la izquierda */
 }
 
 .nav-links {
@@ -128,7 +169,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .social-media {
@@ -140,7 +181,9 @@ nav {
 
 .social-media a {
   text-decoration: none;
-  color: white;
+  border-radius: 150px;
+  background: #dfdfdf;
+  box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
 }
 
 /* Estilos para el menú de hamburguesa */
@@ -148,9 +191,10 @@ nav {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  z-index: 9999; /* Asegura que esté sobre todo lo demás */
+  z-index: 9999;
+  /* Asegura que esté sobre todo lo demás */
 }
 
 @media screen and (max-width: 900px) {
@@ -158,17 +202,20 @@ nav {
     display: block;
   }
   .nav-links {
-    display: none; /* Oculta los enlaces en pantallas pequeñas */
+    display: none;
+    /* Oculta los enlaces en pantallas pequeñas */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con transparencia */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fondo oscuro con transparencia */
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 9998; /* Asegura que esté justo debajo del botón de hamburguesa */
+    z-index: 9998;
+    /* Asegura que esté justo debajo del botón de hamburguesa */
   }
   .nav-links ul {
     flex-direction: column;
@@ -193,44 +240,89 @@ nav {
     display: block;
   }
   .social-media {
-    display: none; /* Oculta las redes sociales en pantallas pequeñas */
+    display: none;
+    /* Oculta las redes sociales en pantallas pequeñas */
   }
 }
 .inicio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: black;
+  margin: 4rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* 1fr para el contenido principal, auto para el botón */
+  text-align: center;
+  gap: 6rem;
 }
 
-.inicio-contenido {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem; /* Espacio entre columnas, ajusta según necesites */
+.inicio h1 {
+  font-size: clamp(2rem, 6vw, 6rem); /* Tamaño de fuente fluido */
+  margin: 0;
+}
+
+.lets-talk {
+  text-align: center;
+  margin: auto;
+}
+
+.lets-talk-text {
+  font-size: clamp(1rem, 2vw, 2rem); /* Tamaño de fuente fluido */
+  align-items: center;
 }
 
 .card {
-  border: 2px solid white;
-  background-color: #ffffff;
-  opacity: 65%;
   border-radius: 1rem;
-  padding: 20px;
+  padding: 2rem;
   font-size: smaller;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
-.card-img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  border-radius: 10px 10px 0 0; /* Redondea las esquinas superiores */
+.lets-talk {
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #212121;
+  border: 0.08em solid #fff;
+  border-radius: 0.3em;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.card-description, .card-text {
-  padding: 10px;
+.lets-talk-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0.4em;
+  width: 8.25em;
+  height: 2.5em;
+  background-color: #212121;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  color: #fff;
+  border: 0.08em solid #fff;
+  box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-.card-description p, .card-text p {
+.lets-talk-text:hover {
+  transition: all 0.5s;
+  transform: translate(0, 0.4em);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+.lets-talk-text:not(hover) {
+  transition: all 1s;
+}
+
+.card-description,
+.card-text {
+  padding: 1rem;
+}
+
+.card-description p,
+.card-text p {
   margin: 0;
 }
 
@@ -263,13 +355,13 @@ nav {
 }
 .meteor-1 {
   position: absolute;
-  top: 60px;
-  left: 12%;
+  top: 184px;
+  left: 59%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.2s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 7s linear infinite;
 }
 .meteor-1:before {
   content: "";
@@ -279,18 +371,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-2 {
   position: absolute;
-  top: 60px;
-  left: 38%;
+  top: 71px;
+  left: 32%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.2s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 5.8s linear infinite;
 }
 .meteor-2:before {
   content: "";
@@ -300,18 +392,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-3 {
   position: absolute;
-  top: 181px;
-  left: 61%;
+  top: 168px;
+  left: 17%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 8.7s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 5.9s linear infinite;
 }
 .meteor-3:before {
   content: "";
@@ -321,18 +413,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-4 {
   position: absolute;
-  top: 208px;
-  left: 52%;
+  top: 158px;
+  left: 53%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.1s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 3.2s linear infinite;
 }
 .meteor-4:before {
   content: "";
@@ -342,18 +434,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-5 {
   position: absolute;
-  top: 254px;
-  left: 36%;
+  top: 151px;
+  left: 92%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 6.7s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 7.7s linear infinite;
 }
 .meteor-5:before {
   content: "";
@@ -363,18 +455,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-6 {
   position: absolute;
-  top: 263px;
-  left: 60%;
+  top: 251px;
+  left: 15%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 7.5s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 6.9s linear infinite;
 }
 .meteor-6:before {
   content: "";
@@ -384,18 +476,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-7 {
   position: absolute;
-  top: 236px;
-  left: 19%;
+  top: 253px;
+  left: 72%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.1s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 4.2s linear infinite;
 }
 .meteor-7:before {
   content: "";
@@ -405,18 +497,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-8 {
   position: absolute;
-  top: 79px;
-  left: 34%;
+  top: 162px;
+  left: 72%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.6s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 9.2s linear infinite;
 }
 .meteor-8:before {
   content: "";
@@ -426,18 +518,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-9 {
   position: absolute;
-  top: 155px;
-  left: 97%;
+  top: 120px;
+  left: 27%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.7s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 6s linear infinite;
 }
 .meteor-9:before {
   content: "";
@@ -447,18 +539,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-10 {
   position: absolute;
-  top: 269px;
-  left: 86%;
+  top: 147px;
+  left: 84%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.8s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 6.9s linear infinite;
 }
 .meteor-10:before {
   content: "";
@@ -468,18 +560,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-11 {
   position: absolute;
-  top: 293px;
-  left: 46%;
+  top: 212px;
+  left: 90%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.4s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 6.5s linear infinite;
 }
 .meteor-11:before {
   content: "";
@@ -489,18 +581,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-12 {
   position: absolute;
-  top: 160px;
-  left: 17%;
+  top: 61px;
+  left: 13%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.6s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 7.9s linear infinite;
 }
 .meteor-12:before {
   content: "";
@@ -510,18 +602,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-13 {
   position: absolute;
-  top: 106px;
-  left: 93%;
+  top: 118px;
+  left: 73%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.3s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 8s linear infinite;
 }
 .meteor-13:before {
   content: "";
@@ -531,18 +623,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-14 {
   position: absolute;
-  top: 154px;
-  left: 78%;
+  top: 164px;
+  left: 43%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 5.5s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 8.1s linear infinite;
 }
 .meteor-14:before {
   content: "";
@@ -552,18 +644,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor-15 {
   position: absolute;
-  top: 121px;
-  left: 72%;
+  top: 55px;
+  left: 24%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 9.9s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 4.5s linear infinite;
 }
 .meteor-15:before {
   content: "";
@@ -573,18 +665,18 @@ nav {
   border-radius: 50%;
   margin-top: -2px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  box-shadow: 0 0 15px 3px #000000;
 }
 
 .meteor {
   position: absolute;
-  top: 101px;
-  left: 61%;
+  top: 179px;
+  left: 41%;
   width: 300px;
   height: 1px;
   transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
-  animation: meteor 4.1s linear infinite;
+  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
+  animation: meteor 8.7s linear infinite;
 }
 .meteor::before {
   content: "";
@@ -593,6 +685,6 @@ nav {
   height: 5px;
   border-radius: 50%;
   margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #fff;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px 3px #000000;
 }/*# sourceMappingURL=main.css.map */

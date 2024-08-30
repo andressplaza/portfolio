@@ -1,39 +1,92 @@
-.inicio{
-    display: flex;
-    justify-content: center;  // Centramos horizontalmente
-    align-items: center;     // Centramos verticalmente
-    height: 100vh;           // Aseguramos que la sección ocupa toda la altura de la pantalla
-    color: black;
-}
 
-.inicio-contenido {
+.inicio {
+    margin: 4rem;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem; /* Espacio entre columnas, ajusta según necesites */
+    grid-template-rows: 1fr 1fr; /* 1fr para el contenido principal, auto para el botón */
+    text-align: center;
+    gap:6rem ;
     
+}
+
+.inicio h1 {
+    font-size: clamp(2rem, 6vw, 6rem); /* Tamaño de fuente fluido */
+    margin: 0;
+}
+
+.lets-talk{
+    text-align: center;
+    margin: auto;
 
 }
+
+
+.lets-talk-text {
+    font-size: clamp(1rem, 2vw, 2rem); /* Tamaño de fuente fluido */
+    align-items: center;
+}
+
+
+
 
 .card {
-    border: 2px solid white;
-    background-color: #ffffff;
-    opacity: 65%;
     border-radius: 1rem;
-    padding: 20px;
+    padding: 2rem;
     font-size: smaller;
+
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
-.card-img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px 10px 0 0; /* Redondea las esquinas superiores */
+.lets-talk {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
 }
 
-.card-description, .card-text {
-    padding: 10px;
+.lets-talk-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-.card-description p, .card-text p {
+.lets-talk-text:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+
+.lets-talk-text:not(hover) {
+    transition: all 1s
+}
+
+
+
+.card-description,
+.card-text {
+    padding: 1rem;
+}
+
+.card-description p,
+.card-text p {
     margin: 0;
 }
