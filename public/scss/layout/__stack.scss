@@ -1,25 +1,28 @@
+/* Estilo para el contenedor principal */
 .stack {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     height: 100vh;
+    position: relative;
+    z-index: 2;
 }
+
 .stack-datagrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    grid-template-rows: repeat(2, auto); /* Dos filas automáticas según el contenido */
-    gap: 3rem; /* Espacio entre los elementos del grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    grid-template-rows: repeat(2, auto); /* 2 filas automáticas */
+    background-color: #F0F6F6; /* Color de fondo */
+    gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+    padding: 10px; /* Espacio interior del contenedor */
+    border-radius: 8px; /* Opcional: redondea las esquinas del contenedor */
 }
 
-.stack-datagrid figure {
+/* Estilo para cada elemento de la cuadrícula */
+.stack-datagrid > div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0; /* Elimina el margen por defecto */
-}
-
-
-.stack-datagrid figcaption {
-    font-size: 1rem; /* Tamaño del texto del nombre */
-    color: #333; /* Color del texto */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: #ffffff; /* Color de fondo de los elementos individuales */
+    border: 1px solid #ccc; /* Borde gris claro */
+    padding: 20px; /* Espacio interior de los elementos */
+    text-align: center; /* Centra el texto y los iconos */
+    box-sizing: border-box; /* Incluye el borde y el padding en el tamaño total del elemento */
 }

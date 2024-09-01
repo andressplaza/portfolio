@@ -3,6 +3,8 @@
 }
 
 nav {
+  max-width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +33,6 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
 }
 
 .social-media {
@@ -42,23 +43,16 @@ nav {
 
 }
 
-.social-media a {
-
-  text-decoration: none;
-  -webkit-border-radius: 150px;
-  border-radius: 150px;
-  background: #dfdfdf;
-  -webkit-box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
-  box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
-}
 
 /* Estilos para el menú de hamburguesa */
 .hamburger {
+
   display: none;
   background: none;
   border: none;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
+  color: #201E1F;
+  cursor:none;
+  
   z-index: 9999;
   /* Asegura que esté sobre todo lo demás */
 }

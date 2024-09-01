@@ -18,9 +18,27 @@
     opacity: 0;
   }
 }
-.hidden {
+.hidden-left {
   opacity: 0;
-  transform: translateX(-100%); /* Cambiado de 100% a -100% para empezar desde la izquierda */
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-left-onces {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-right-onces {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100%);
   transition: opacity 1s, transform 1s;
 }
 
@@ -76,17 +94,42 @@
 }
 body {
   font-family: "SpaceGrotesk";
-  color: rgb(0, 0, 0);
+  color: #201E1F;
   font-size: larger;
   cursor: url("../../img/dedo.png"), auto;
 }
 
-a {
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: 1fr;
+  position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 5px; /* Ajusta el grosor de la línea */
+  background-color: black; /* Color de la línea */
+  transform: translateX(-50%); /* Centra la línea horizontalmente */
+  z-index: 1; /* Coloca la línea detrás de otros elementos */
+}
+
+.inicio-contenido {
+  position: relative;
+  z-index: 2;
+  background-color: #F0F6F6;
+}
+
+* {
   cursor: url("../../img/dedo.png"), auto;
 }
 
 html, body {
-  background: #dfdfdf;
+  background: #F0F6F6;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -133,6 +176,8 @@ html, body {
 }
 
 nav {
+  max-width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -161,7 +206,6 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
 }
 
 .social-media {
@@ -171,20 +215,13 @@ nav {
   gap: 1.5rem;
 }
 
-.social-media a {
-  text-decoration: none;
-  border-radius: 150px;
-  background: #dfdfdf;
-  box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
-}
-
 /* Estilos para el menú de hamburguesa */
 .hamburger {
   display: none;
   background: none;
   border: none;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
+  color: #201E1F;
+  cursor: none;
   z-index: 9999;
   /* Asegura que esté sobre todo lo demás */
 }
@@ -243,7 +280,7 @@ nav {
   gap: 1.5rem; /* Espacio entre las filas */
   text-align: center;
   padding: 20px;
-  height: 100vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+  height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
   align-items: center; /* Centra los elementos verticalmente en cada fila */
 }
 
@@ -281,37 +318,81 @@ nav {
 
 .cv-button:hover {
   color: #fff; /* Texto blanco al pasar el mouse */
-  background-color: #000; /* Fondo negro al pasar el mouse */
+  background-color: #5C7AFF; /* Fondo negro al pasar el mouse */
 }
 
+/* Estilo para el contenedor principal */
 .stack {
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .stack-datagrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-  grid-template-rows: repeat(2, auto); /* Dos filas automáticas según el contenido */
-  gap: 3rem; /* Espacio entre los elementos del grid */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+  grid-template-rows: repeat(2, auto); /* 2 filas automáticas */
+  background-color: #F0F6F6; /* Color de fondo */
+  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+  padding: 10px; /* Espacio interior del contenedor */
+  border-radius: 8px; /* Opcional: redondea las esquinas del contenedor */
 }
 
-.stack-datagrid figure {
+/* Estilo para cada elemento de la cuadrícula */
+.stack-datagrid > div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0; /* Elimina el margen por defecto */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  background-color: #ffffff; /* Color de fondo de los elementos individuales */
+  border: 1px solid #ccc; /* Borde gris claro */
+  padding: 20px; /* Espacio interior de los elementos */
+  text-align: center; /* Centra el texto y los iconos */
+  box-sizing: border-box; /* Incluye el borde y el padding en el tamaño total del elemento */
 }
 
-.stack-datagrid figcaption {
-  font-size: 1rem; /* Tamaño del texto del nombre */
-  color: #333; /* Color del texto */
-}
-
-/* Media queries para hacer responsive */
+/* Estilos comunes para pantallas menores a 900px */
 @media screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    /* Oculta los enlaces en pantallas pequeñas */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fondo oscuro con transparencia */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9998;
+    /* Asegura que esté justo debajo del botón de hamburguesa */
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger .fa-bars {
+    display: block;
+  }
+  .hamburger .fa-times {
+    display: none;
+  }
+  .nav-links.show ~ .hamburger .fa-bars {
+    display: none;
+  }
+  .nav-links.show ~ .hamburger .fa-times {
+    display: block;
+  }
   nav {
     grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
     justify-items: center; /* Centra todos los elementos */
@@ -321,13 +402,14 @@ nav {
     margin-top: 1rem;
   }
   .social-media {
-    display: none;
+    display: none; /* Oculta las redes sociales en pantallas pequeñas */
   }
   .stack-datagrid {
     grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
     grid-template-rows: repeat(3, auto); /* Tres filas automáticas según el contenido */
   }
 }
+/* Estilos adicionales para pantallas menores a 600px */
 @media screen and (max-width: 600px) {
   nav {
     grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
@@ -337,13 +419,56 @@ nav {
   nav ul {
     display: none;
   }
-  .social-media {
-    display: none;
-  }
-}
-@media screen and (max-width: 600px) and (max-width: 600px) {
   .stack-datagrid {
     grid-template-columns: 1fr; /* Una sola columna */
     grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
   }
+}
+footer {
+  color: #F0F6F6;
+  background-color: #5C7AFF; /* Fondo azul para el footer */
+  padding: 2rem 0; /* Espaciado arriba y abajo */
+  text-align: center; /* Centra el texto */
+  border-top: 0.2rem solid #201E1F; /* Línea superior para separación */
+}
+
+.footer-container {
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 20px; /* Espaciado interno a los lados */
+}
+
+.footer-text {
+  margin: 0.5rem 0;
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.footer-email {
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+  color: #F0F6F6; /* Color del texto del correo */
+}
+
+.footer-email-link {
+  color: #F0F6F6; /* Color del enlace del correo */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.footer-email-link:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+.footer-social-media {
+  margin-top: 0.9rem; /* Espaciado arriba del área de redes sociales */
+  display: flex;
+  justify-content: center; /* Centra los iconos de redes sociales */
+  gap: 1rem; /* Espacio entre iconos */
+}
+
+.social-icon {
+  color: #F0F6F6;
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.social-icon:hover {
+  color: #000; /* Cambia el color al pasar el cursor */
 }/*# sourceMappingURL=main.css.map */

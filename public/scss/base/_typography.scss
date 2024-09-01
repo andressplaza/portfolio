@@ -1,11 +1,38 @@
 body {
     font-family: 'SpaceGrotesk';
-    color: rgb(0, 0, 0);
+    color:#201E1F;
     font-size: larger;
     cursor: url('../../img/dedo.png'), auto;
 }
 
-a {
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: 1fr;
+    position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 5px; /* Ajusta el grosor de la línea */
+    background-color: black; /* Color de la línea */
+    transform: translateX(-50%); /* Centra la línea horizontalmente */
+    z-index: 1; /* Coloca la línea detrás de otros elementos */
+}
+
+.inicio-contenido {
+    position: relative;
+    z-index: 2;
+    background-color:#F0F6F6 ;
+}
+
+
+
+* {
     cursor: url('../../img/dedo.png'), auto;
 }
 

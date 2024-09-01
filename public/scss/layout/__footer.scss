@@ -1,0 +1,48 @@
+footer {
+    color: #F0F6F6;
+    background-color: #5C7AFF; /* Fondo azul para el footer */
+    padding: 2rem 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el texto */
+    border-top: 0.2rem solid #201E1F; /* Línea superior para separación */
+}
+
+.footer-container {
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espaciado interno a los lados */
+}
+
+.footer-text {
+    margin: 0.5rem 0;
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.footer-email {
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    color: #F0F6F6; /* Color del texto del correo */
+}
+
+.footer-email-link {
+    color: #F0F6F6; /* Color del enlace del correo */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.footer-email-link:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+.footer-social-media {
+    margin-top: 0.9rem; /* Espaciado arriba del área de redes sociales */
+    display: flex;
+    justify-content: center; /* Centra los iconos de redes sociales */
+    gap: 1rem; /* Espacio entre iconos */
+}
+
+.social-icon {
+    color: #F0F6F6;
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.social-icon:hover {
+    color: #000; /* Cambia el color al pasar el cursor */
+}

@@ -17,9 +17,28 @@
     }
 }
 
-.hidden {
+.hidden-left {
     opacity: 0;
-    transform: translateX(-100%); /* Cambiado de 100% a -100% para empezar desde la izquierda */
+    transform: translateX(-100%); 
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden-left-onces{
+    opacity: 0;
+    transform: translateX(-100%); 
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden-right-onces{
+    opacity: 0;
+    transform: translateX(100%); 
+    transition: opacity 1s, transform 1s;
+
+}
+
+.hidden-right {
+    opacity: 0;
+    transform: translateX(100%); 
     transition: opacity 1s, transform 1s;
 }
 

@@ -1,6 +1,5 @@
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log((entry))
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -9,11 +8,25 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+const onceObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+});
 
-
-const hiddenElements = document.querySelectorAll('.hidden');
-
+const hiddenElements = document.querySelectorAll('.hidden-left');
+const hiddenElements2 = document.querySelectorAll('.hidden-right');
+const hiddenFixedElements2 = document.querySelectorAll('.hidden-right-onces');
+const hiddenFixedElements = document.querySelectorAll('.hidden-left-onces');
 hiddenElements.forEach((el) => observer.observe(el));
+hiddenElements2.forEach((el) => observer.observe(el));
+
+hiddenFixedElements.forEach((el) => onceObserver.observe(el));
+hiddenFixedElements2.forEach((el) => onceObserver.observe(el));
+
 
 document.querySelector('.hamburger').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
@@ -47,3 +60,10 @@ document.querySelector('.hamburger').addEventListener('click', function() {
   });document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('.nav-links').classList.toggle('show');
   });
+
+  "use client";
+ 
+import { cn } from "@/lib/utils";
+import DotPattern from "@/components/magicui/dot-pattern";
+ 
+
