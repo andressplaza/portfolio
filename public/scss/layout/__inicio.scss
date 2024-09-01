@@ -1,92 +1,49 @@
-
 .inicio {
-    margin: 4rem;
     display: grid;
-    grid-template-rows: 1fr 1fr; /* 1fr para el contenido principal, auto para el botón */
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: repeat(2, auto); /* Tres filas de altura automática */
+    gap: 1.5rem; /* Espacio entre las filas */
     text-align: center;
-    gap:6rem ;
-    
+    padding: 20px;
+    height: 100vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+    align-items: center; /* Centra los elementos verticalmente en cada fila */
 }
+
 
 .inicio h1 {
-    font-size: clamp(2rem, 6vw, 6rem); /* Tamaño de fuente fluido */
-    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.lets-talk{
-    text-align: center;
-    margin: auto;
-
+.inicio h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
 }
 
-
-.lets-talk-text {
-    font-size: clamp(1rem, 2vw, 2rem); /* Tamaño de fuente fluido */
-    align-items: center;
+.inicio p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-
-
-.card {
-    border-radius: 1rem;
-    padding: 2rem;
-    font-size: smaller;
-
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
+.cv-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #000; /* Color del texto negro */
+    background-color: #fff; /* Fondo blanco */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 }
 
-.lets-talk {
-    padding: 0.1em 0.25em;
-    width: 13em;
-    height: 4.2em;
-    background-color: #212121;
-    border: 0.08em solid #fff;
-    border-radius: 0.3em;
-    font-size: 12px;
-    cursor: pointer;
+.cv-button:hover {
+    color: #fff; /* Texto blanco al pasar el mouse */
+    background-color: #000; /* Fondo negro al pasar el mouse */
 }
 
-.lets-talk-text {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 0.4em;
-    width: 8.25em;
-    height: 2.5em;
-    background-color: #212121;
-    border-radius: 0.2em;
-    font-size: 1.5em;
-    color: #fff;
-    border: 0.08em solid #fff;
-    box-shadow: 0 0.4em 0.1em 0.019em #fff;
-}
-
-.lets-talk-text:hover {
-    transition: all 0.5s;
-    transform: translate(0, 0.4em);
-    box-shadow: 0 0 0 0 #fff;
-}
-
-
-.lets-talk-text:not(hover) {
-    transition: all 1s
-}
-
-
-
-.card-description,
-.card-text {
-    padding: 1rem;
-}
-
-.card-description p,
-.card-text p {
-    margin: 0;
-}

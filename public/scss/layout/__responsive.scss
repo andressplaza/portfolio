@@ -11,6 +11,11 @@
     .social-media {
       display: none;
     }
+
+    .stack-datagrid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+      grid-template-rows: repeat(3, auto); /* Tres filas automáticas según el contenido */
+  }
   }
   @media screen and (max-width: 600px) {
     nav {
@@ -24,4 +29,11 @@
     .social-media {
       display: none;
     }
+
+    @media screen and (max-width: 600px) {
+      .stack-datagrid {
+          grid-template-columns: 1fr; /* Una sola columna */
+          grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
+      }
+  }
   }

@@ -41,3 +41,9 @@ document.querySelectorAll('.groovy').forEach(function(element) {
         element.style.animation = 'none';
     });
 });
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('show');
+  });document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('show');
+  });

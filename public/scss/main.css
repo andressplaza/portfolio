@@ -128,16 +128,8 @@ html, body {
   width: 80%;
 }
 
-.stars-and-meteors-container {
-  position: relative;
-  overflow: hidden;
-}
-
 .header {
-  position: sticky;
-  top: 0;
-  padding: 10px;
-  z-index: 1000;
+  padding: 1rem;
 }
 
 nav {
@@ -245,85 +237,77 @@ nav {
   }
 }
 .inicio {
-  margin: 4rem;
   display: grid;
-  grid-template-rows: 1fr 1fr; /* 1fr para el contenido principal, auto para el botón */
+  grid-template-columns: 1fr; /* Una sola columna */
+  grid-template-rows: repeat(2, auto); /* Tres filas de altura automática */
+  gap: 1.5rem; /* Espacio entre las filas */
   text-align: center;
-  gap: 6rem;
+  padding: 20px;
+  height: 100vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+  align-items: center; /* Centra los elementos verticalmente en cada fila */
 }
 
 .inicio h1 {
-  font-size: clamp(2rem, 6vw, 6rem); /* Tamaño de fuente fluido */
-  margin: 0;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.lets-talk {
+.inicio h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.inicio p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000; /* Color del texto negro */
+  background-color: #fff; /* Fondo blanco */
+  border: 2px solid #000; /* Borde negro */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.cv-button:hover {
+  color: #fff; /* Texto blanco al pasar el mouse */
+  background-color: #000; /* Fondo negro al pasar el mouse */
+}
+
+.stack {
+  align-items: center;
   text-align: center;
-  margin: auto;
-}
-
-.lets-talk-text {
-  font-size: clamp(1rem, 2vw, 2rem); /* Tamaño de fuente fluido */
-  align-items: center;
-}
-
-.card {
-  border-radius: 1rem;
-  padding: 2rem;
-  font-size: smaller;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  color: white;
-}
-
-.lets-talk {
-  padding: 0.1em 0.25em;
-  width: 13em;
-  height: 4.2em;
-  background-color: #212121;
-  border: 0.08em solid #fff;
-  border-radius: 0.3em;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.lets-talk-text {
-  position: relative;
-  display: flex;
   justify-content: center;
+  height: 100vh;
+}
+
+.stack-datagrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+  grid-template-rows: repeat(2, auto); /* Dos filas automáticas según el contenido */
+  gap: 3rem; /* Espacio entre los elementos del grid */
+}
+
+.stack-datagrid figure {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  bottom: 0.4em;
-  width: 8.25em;
-  height: 2.5em;
-  background-color: #212121;
-  border-radius: 0.2em;
-  font-size: 1.5em;
-  color: #fff;
-  border: 0.08em solid #fff;
-  box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  margin: 0; /* Elimina el margen por defecto */
 }
 
-.lets-talk-text:hover {
-  transition: all 0.5s;
-  transform: translate(0, 0.4em);
-  box-shadow: 0 0 0 0 #fff;
-}
-
-.lets-talk-text:not(hover) {
-  transition: all 1s;
-}
-
-.card-description,
-.card-text {
-  padding: 1rem;
-}
-
-.card-description p,
-.card-text p {
-  margin: 0;
+.stack-datagrid figcaption {
+  font-size: 1rem; /* Tamaño del texto del nombre */
+  color: #333; /* Color del texto */
 }
 
 /* Media queries para hacer responsive */
@@ -339,6 +323,10 @@ nav {
   .social-media {
     display: none;
   }
+  .stack-datagrid {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    grid-template-rows: repeat(3, auto); /* Tres filas automáticas según el contenido */
+  }
 }
 @media screen and (max-width: 600px) {
   nav {
@@ -353,338 +341,9 @@ nav {
     display: none;
   }
 }
-.meteor-1 {
-  position: absolute;
-  top: 184px;
-  left: 59%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 7s linear infinite;
-}
-.meteor-1:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-2 {
-  position: absolute;
-  top: 71px;
-  left: 32%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 5.8s linear infinite;
-}
-.meteor-2:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-3 {
-  position: absolute;
-  top: 168px;
-  left: 17%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 5.9s linear infinite;
-}
-.meteor-3:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-4 {
-  position: absolute;
-  top: 158px;
-  left: 53%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 3.2s linear infinite;
-}
-.meteor-4:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-5 {
-  position: absolute;
-  top: 151px;
-  left: 92%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 7.7s linear infinite;
-}
-.meteor-5:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-6 {
-  position: absolute;
-  top: 251px;
-  left: 15%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 6.9s linear infinite;
-}
-.meteor-6:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-7 {
-  position: absolute;
-  top: 253px;
-  left: 72%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 4.2s linear infinite;
-}
-.meteor-7:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-8 {
-  position: absolute;
-  top: 162px;
-  left: 72%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 9.2s linear infinite;
-}
-.meteor-8:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-9 {
-  position: absolute;
-  top: 120px;
-  left: 27%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 6s linear infinite;
-}
-.meteor-9:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-10 {
-  position: absolute;
-  top: 147px;
-  left: 84%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 6.9s linear infinite;
-}
-.meteor-10:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-11 {
-  position: absolute;
-  top: 212px;
-  left: 90%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 6.5s linear infinite;
-}
-.meteor-11:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-12 {
-  position: absolute;
-  top: 61px;
-  left: 13%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 7.9s linear infinite;
-}
-.meteor-12:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-13 {
-  position: absolute;
-  top: 118px;
-  left: 73%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 8s linear infinite;
-}
-.meteor-13:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-14 {
-  position: absolute;
-  top: 164px;
-  left: 43%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 8.1s linear infinite;
-}
-.meteor-14:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor-15 {
-  position: absolute;
-  top: 55px;
-  left: 24%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 4.5s linear infinite;
-}
-.meteor-15:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
-}
-
-.meteor {
-  position: absolute;
-  top: 179px;
-  left: 41%;
-  width: 300px;
-  height: 1px;
-  transform: rotate(-45deg);
-  background-image: linear-gradient(to right, #000000, rgba(255, 255, 255, 0));
-  animation: meteor 8.7s linear infinite;
-}
-.meteor::before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-  margin-top: -2px;
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 15px 3px #000000;
+@media screen and (max-width: 600px) and (max-width: 600px) {
+  .stack-datagrid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
+  }
 }/*# sourceMappingURL=main.css.map */

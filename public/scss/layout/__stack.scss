@@ -1,0 +1,25 @@
+.stack {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+}
+.stack-datagrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: repeat(2, auto); /* Dos filas automáticas según el contenido */
+    gap: 3rem; /* Espacio entre los elementos del grid */
+}
+
+.stack-datagrid figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+
+.stack-datagrid figcaption {
+    font-size: 1rem; /* Tamaño del texto del nombre */
+    color: #333; /* Color del texto */
+}
