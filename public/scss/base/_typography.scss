@@ -1,8 +1,11 @@
+
+* {
+    cursor: url('../../img/dedo.png'), auto;
+}
 body {
     font-family: 'SpaceGrotesk';
     color:#201E1F;
     font-size: larger;
-    cursor: url('../../img/dedo.png'), auto;
 }
 
 .container {
@@ -28,11 +31,9 @@ body {
     position: relative;
     z-index: 2;
     background-color:#F0F6F6 ;
+    
 }
 
 
 
-* {
-    cursor: url('../../img/dedo.png'), auto;
-}
 

@@ -28,7 +28,7 @@ hiddenFixedElements.forEach((el) => onceObserver.observe(el));
 hiddenFixedElements2.forEach((el) => onceObserver.observe(el));
 
 
-document.querySelector('.hamburger').addEventListener('click', function() {
+document.querySelector('.hamburger').addEventListener('click', function () {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 
@@ -40,30 +40,24 @@ document.querySelector('.hamburger').addEventListener('click', function() {
 });
 
 
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.style.display = 'none';
-});
-
-document.querySelectorAll('.groovy').forEach(function(element) {
-    element.addEventListener('mouseenter', function() {
+document.querySelectorAll('.groovy').forEach(function (element) {
+    element.addEventListener('mouseenter', function () {
         element.style.animation = 'pulse 1s infinite';
     });
 
-    element.addEventListener('mouseleave', function() {
+    element.addEventListener('mouseleave', function () {
         element.style.animation = 'none';
     });
 });
 
-document.querySelector('.hamburger').addEventListener('click', function() {
+document.querySelector('.hamburger').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('show');
-  });document.querySelector('.hamburger').addEventListener('click', function() {
+}); document.querySelector('.hamburger').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('show');
-  });
+});
 
-  "use client";
- 
-import { cn } from "@/lib/utils";
-import DotPattern from "@/components/magicui/dot-pattern";
- 
+
+
+
+
 
