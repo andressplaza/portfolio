@@ -81,8 +81,10 @@
       display: none;
   }
 
-  .stack-datagrid {
+  .datagrid-container {
       grid-template-columns: 1fr; /* Una sola columna */
       grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
+      gap: 2rem;
   }
+
 }

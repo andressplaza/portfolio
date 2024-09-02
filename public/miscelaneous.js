@@ -19,11 +19,21 @@ const onceObserver = new IntersectionObserver((entries, observer) => {
 
 const hiddenElements = document.querySelectorAll('.hidden-left');
 const hiddenElements2 = document.querySelectorAll('.hidden-right');
-const hiddenFixedElements2 = document.querySelectorAll('.hidden-right-onces');
-const hiddenFixedElements = document.querySelectorAll('.hidden-left-onces');
+const hiddenFixedElements2 = document.querySelectorAll('.hidden-right-once');
+const hiddenFixedElements = document.querySelectorAll('.hidden-left-once');
+
+const hiddenUpElements = document.querySelectorAll('.hidden-up');
+const hiddenUpOnceElements = document.querySelectorAll('.hidden-up-once');
+const hiddenDownElements = document.querySelectorAll('.hidden-down');
+const hiddenDownOncesElements = document.querySelectorAll('.hidden-down-once');
+
+hiddenUpElements.forEach((el) => observer.observe(el));
+hiddenUpOnceElements.forEach((el) => observer.observe(el));
+hiddenDownElements.forEach((el) => onceObserver.observe(el));
+hiddenDownOncesElements.forEach((el) => onceObserver.observe(el));
+
 hiddenElements.forEach((el) => observer.observe(el));
 hiddenElements2.forEach((el) => observer.observe(el));
-
 hiddenFixedElements.forEach((el) => onceObserver.observe(el));
 hiddenFixedElements2.forEach((el) => onceObserver.observe(el));
 
@@ -55,6 +65,8 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 }); document.querySelector('.hamburger').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('show');
 });
+
+
 
 
 

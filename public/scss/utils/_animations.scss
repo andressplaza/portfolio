@@ -16,24 +16,22 @@
         opacity: 0;
     }
 }
-
 .hidden-left {
     opacity: 0;
     transform: translateX(-100%); 
     transition: opacity 1s, transform 1s;
 }
 
-.hidden-left-onces{
+.hidden-left-onces {
     opacity: 0;
     transform: translateX(-100%); 
     transition: opacity 1s, transform 1s;
 }
 
-.hidden-right-onces{
+.hidden-right-onces {
     opacity: 0;
     transform: translateX(100%); 
     transition: opacity 1s, transform 1s;
-
 }
 
 .hidden-right {
@@ -42,8 +40,33 @@
     transition: opacity 1s, transform 1s;
 }
 
+.hidden-down {
+    transform: translateY(500%); 
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden-down-onces {
+    opacity: 0;
+    transform: translateY(200%); 
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden-up {
+    opacity: 0;
+    transform: translateY(-100%); 
+    transition: opacity 1s, transform 1s;
+}
+
+.hidden-up-onces {
+    opacity: 0;
+    transform: translateY(-100%); 
+    transition: opacity 1s, transform 1s;
+}
+
 .show {
     opacity: 1;
-    transform: translateX(0%);
+    transform: translate(0%);
+    transition: opacity 1s, transform 1s;
 }
+
 

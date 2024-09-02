@@ -1,28 +1,55 @@
-/* Estilo para el contenedor principal */
+
+// Define breakpoints for responsiveness
+$breakpoint-md: 900px;
+$breakpoint-sm: 600px;
+
 .stack {
-    height: 100vh;
-    position: relative;
+    text-align: center;
     z-index: 2;
+    height: 85vh;
+    h1 {
+        position: relative;
+        z-index: 2;
+        background-color:#F0F6F6;
+    }
 }
 
-.stack-datagrid {
+.datagrid-container {
+    background-color:#F0F6F6;
+    height: auto;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
-    grid-template-rows: repeat(2, auto); /* 2 filas automáticas */
-    background-color: #F0F6F6; /* Color de fondo */
-    gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-    padding: 10px; /* Espacio interior del contenedor */
-    border-radius: 8px; /* Opcional: redondea las esquinas del contenedor */
-}
-
-/* Estilo para cada elemento de la cuadrícula */
-.stack-datagrid > div {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    background-color: #ffffff; /* Color de fondo de los elementos individuales */
-    border: 1px solid #ccc; /* Borde gris claro */
-    padding: 20px; /* Espacio interior de los elementos */
-    text-align: center; /* Centra el texto y los iconos */
-    box-sizing: border-box; /* Incluye el borde y el padding en el tamaño total del elemento */
-}
+    grid-template-columns: repeat(3, 1fr); // Start with 3 columns
+    grid-template-rows: repeat(3, 1fr); // Start with 3 rows
+    padding: 20px; // Padding around the grid
+    
+    .datagrid-item {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  // Responsive adjustments for medium screens
+  @media (max-width: $breakpoint-md) {
+    .datagrid-container {
+      grid-template-columns: repeat(2, 1fr); // Reduce to 2 columns on medium screens
+      grid-template-rows: repeat(5, 1fr); // Adjust rows to fit content
+    }
+  }
+  
+  // Responsive adjustments for small screens
+  @media (max-width: $breakpoint-sm) {
+    .datagrid-container {
+      grid-template-columns: 1fr; // Single column layout on small screens
+      grid-template-rows: repeat(9, 1fr); // Each item gets its own row
+    }
+  
+    .datagrid-item {
+      padding: 15px; // Adjust padding for smaller screens
+    }
+  }
+  
+  

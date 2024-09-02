@@ -4,9 +4,10 @@
     grid-template-rows: repeat(2, auto); /* Tres filas de altura automática */
     gap: 1.5rem; /* Espacio entre las filas */
     text-align: center;
-    padding: 20px;
-    height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+    padding: 2rem;
     align-items: center; /* Centra los elementos verticalmente en cada fila */
+    height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+
 }
 
 
@@ -44,6 +45,6 @@
 
 .cv-button:hover {
     color: #fff; /* Texto blanco al pasar el mouse */
-    background-color: #5C7AFF; /* Fondo negro al pasar el mouse */
+    background-color: #465fce; /* Fondo negro al pasar el mouse */
 }
 

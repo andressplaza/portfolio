@@ -42,9 +42,33 @@
   transition: opacity 1s, transform 1s;
 }
 
+.hidden-down {
+  transform: translateY(500%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-down-onces {
+  opacity: 0;
+  transform: translateY(200%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-up {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 1s, transform 1s;
+}
+
+.hidden-up-onces {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 1s, transform 1s;
+}
+
 .show {
   opacity: 1;
-  transform: translateX(0%);
+  transform: translate(0%);
+  transition: opacity 1s, transform 1s;
 }
 
 .groovy {
@@ -54,6 +78,7 @@
 
 .groovy:hover {
   transform: scale(1.1);
+  color: #5C7AFF;
 }
 
 * {
@@ -246,9 +271,9 @@ nav {
   grid-template-rows: repeat(2, auto); /* Tres filas de altura automática */
   gap: 1.5rem; /* Espacio entre las filas */
   text-align: center;
-  padding: 20px;
-  height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
+  padding: 2rem;
   align-items: center; /* Centra los elementos verticalmente en cada fila */
+  height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
 }
 
 .inicio h1 {
@@ -285,38 +310,52 @@ nav {
 
 .cv-button:hover {
   color: #fff; /* Texto blanco al pasar el mouse */
-  background-color: #5C7AFF; /* Fondo negro al pasar el mouse */
+  background-color: #465fce; /* Fondo negro al pasar el mouse */
 }
 
-/* Estilo para el contenedor principal */
 .stack {
-  height: 100vh;
+  text-align: center;
+  z-index: 2;
+  height: 85vh;
+}
+.stack h1 {
   position: relative;
   z-index: 2;
+  background-color: #F0F6F6;
 }
 
-.stack-datagrid {
+.datagrid-container {
+  background-color: #F0F6F6;
+  height: auto;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
-  grid-template-rows: repeat(2, auto); /* 2 filas automáticas */
-  background-color: #F0F6F6; /* Color de fondo */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
-  padding: 10px; /* Espacio interior del contenedor */
-  border-radius: 8px; /* Opcional: redondea las esquinas del contenedor */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 20px;
+}
+.datagrid-container .datagrid-item {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para cada elemento de la cuadrícula */
-.stack-datagrid > div {
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  background-color: #ffffff; /* Color de fondo de los elementos individuales */
-  border: 1px solid #ccc; /* Borde gris claro */
-  padding: 20px; /* Espacio interior de los elementos */
-  text-align: center; /* Centra el texto y los iconos */
-  box-sizing: border-box; /* Incluye el borde y el padding en el tamaño total del elemento */
+@media (max-width: 900px) {
+  .datagrid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
 }
-
+@media (max-width: 600px) {
+  .datagrid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+  }
+  .datagrid-item {
+    padding: 15px;
+  }
+}
 /* Estilos comunes para pantallas menores a 900px */
 @media screen and (max-width: 900px) {
   .hamburger {
@@ -386,9 +425,10 @@ nav {
   nav ul {
     display: none;
   }
-  .stack-datagrid {
+  .datagrid-container {
     grid-template-columns: 1fr; /* Una sola columna */
     grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
+    gap: 2rem;
   }
 }
 footer {
