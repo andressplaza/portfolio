@@ -1,90 +1,113 @@
-/* Estilos comunes para pantallas menores a 900px */
 @media screen and (max-width: 900px) {
-  .hamburger {
-      display: block;
-  }
+    .header {
+        background-image: url('../../img/blurry-gradient-haikei.png');
+        background-size: cover; /* Asegura que la imagen cubra el elemento */
+        background-position: center; /* Centra la imagen dentro del elemento */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        color: white;
+    }
 
-  .nav-links {
-      display: none;
-      /* Oculta los enlaces en pantallas pequeñas */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      /* Fondo oscuro con transparencia */
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 9998;
-      /* Asegura que esté justo debajo del botón de hamburguesa */
-  }
+    .hamburger {
+        display: block;
+        font-size: 1.3rem;
+        color: white;
+        /* Tamaño de los íconos */
+    }
 
-  .nav-links ul {
-      flex-direction: column;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-  }
+    .social-media {
+        display: none;
+    }
 
-  .nav-links.show {
-      display: flex;
-  }
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        background-image: url('../../img/blurry-gradient-haikei.png');
+        background-size: cover; /* Asegura que la imagen cubra el elemento */
+        background-position: center; /* Centra la imagen dentro del elemento */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9998;
+    }
 
-  .hamburger .fa-bars {
-      display: block;
-  }
+    .nav-links ul {
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-  .hamburger .fa-times {
-      display: none;
-  }
+    .nav-links.show {
+        display: flex;
+    }
 
-  .nav-links.show ~ .hamburger .fa-bars {
-      display: none;
-  }
+    .no-scroll {
+        overflow: hidden;
+    }
 
-  .nav-links.show ~ .hamburger .fa-times {
-      display: block;
-  }
+    .hamburger .fa-bars {
+        display: block;
+    }
 
-  nav {
-      grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
-      justify-items: center; /* Centra todos los elementos */
-      text-align: center; /* Alinea el texto al centro */
-  }
 
-  nav ul {
-      margin-top: 1rem;
-  }
 
-  .social-media {
-      display: none; /* Oculta las redes sociales en pantallas pequeñas */
-  }
+    .nav-links.show~.hamburger .fa-bars {
+        display: none;
+    }
 
-  .stack-datagrid {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-      grid-template-rows: repeat(3, auto); /* Tres filas automáticas según el contenido */
-  }
+    .nav-links.show~.hamburger .fa-times {
+        display: block;
+    }
+
+    nav {
+        grid-template-columns: auto;
+        justify-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+
+    .stack-datagrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
 }
 
-/* Estilos adicionales para pantallas menores a 600px */
 @media screen and (max-width: 600px) {
-  nav {
-      grid-template-columns: auto; /* Cambia a una sola columna en dispositivos móviles */
-      justify-items: center; /* Centra todos los elementos */
-      text-align: center; /* Alinea el texto al centro */
-  }
+    .header {
+        background-color: #5C7AFF;
+        color: white;
+    }
 
-  nav ul {
-      display: none;
-  }
+    nav {
+        grid-template-columns: auto;
+        justify-items: center;
+        text-align: center;
+    }
 
-  .datagrid-container {
-      grid-template-columns: 1fr; /* Una sola columna */
-      grid-template-rows: repeat(6, auto); /* Seis filas automáticas según el contenido */
-      gap: 2rem;
-  }
+    .hamburger .fa-times {
+        color: white;
+    }
+
+    nav ul {
+        color: white;
+        display: none;
+    }
+
+    .datagrid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 2rem;
+    }
 
 }

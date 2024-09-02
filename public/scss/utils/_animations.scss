@@ -41,14 +41,12 @@
 }
 
 .hidden-down {
-    transform: translateY(500%); 
+    transform: translateY(100%); 
     transition: opacity 1s, transform 1s;
 }
 
-.hidden-down-onces {
-    opacity: 0;
-    transform: translateY(200%); 
-    transition: opacity 1s, transform 1s;
+.hidden-down-once {
+    transform: translateY(500%); 
 }
 
 .hidden-up {
@@ -57,9 +55,9 @@
     transition: opacity 1s, transform 1s;
 }
 
-.hidden-up-onces {
+.hidden-up-once {
     opacity: 0;
-    transform: translateY(-100%); 
+    transform: translateY(-00%); 
     transition: opacity 1s, transform 1s;
 }
 
