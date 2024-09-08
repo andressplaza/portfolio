@@ -260,7 +260,7 @@ nav {
   margin-bottom: 10px;
   font-size: 3rem; /* Ajusta el tamaño de la fuente según sea necesario */
   font-weight: bold; /* Opcional: ajusta el peso de la fuente si es necesario */
-  background-image: url("../../img/blurry-gradient-haikei.png"); /* Reemplaza con la ruta de tu imagen */
+  background-image: url("../img/blurry-gradient-haikei.png"); /* Reemplaza con la ruta de tu imagen */
   background-size: cover; /* Ajusta el tamaño de la imagen según el contenedor */
   background-clip: text; /* Clipa el fondo a la forma del texto */
   -webkit-background-clip: text; /* Necesario para compatibilidad con WebKit browsers (Chrome, Safari) */
@@ -289,7 +289,7 @@ nav {
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
-  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-image: url("../img/blurry-gradient-haikei.png");
   background-size: cover; /* Asegura que la imagen cubra el elemento */
   background-position: center; /* Centra la imagen dentro del elemento */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -328,7 +328,7 @@ nav {
 }
 .datagrid-container .datagrid-item {
   color: white;
-  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-image: url("../img/blurry-gradient-haikei.png");
   background-size: cover;
   background-position: center;
   /* Evita que la imagen se repita */
@@ -355,12 +355,6 @@ nav {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 0.5rem;
-}
-.datagrid-container .datagrid-item ul li:nth-child(2) {
-  position: relative;
-  padding: 0.3rem;
-  background: linear-gradient(white, white) top/20% 2px no-repeat, linear-gradient(white, white) bottom/20% 2px no-repeat;
-  background-position: center top, center bottom;
 }
 
 @media (max-width: 900px) {
@@ -409,7 +403,7 @@ nav {
   padding: 1rem 2rem;
   text-decoration: none;
   color: #000; /* Color del texto negro */
-  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-image: url("../img/blurry-gradient-haikei.png");
   background-size: cover; /* Asegura que la imagen cubra el elemento */
   background-position: center; /* Centra la imagen dentro del elemento */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -439,7 +433,7 @@ nav {
 }
 @media screen and (max-width: 900px) {
   .header {
-    background-image: url("../../img/blurry-gradient-haikei.png");
+    background-image: url("../img/blurry-gradient-haikei.png");
     background-size: cover; /* Asegura que la imagen cubra el elemento */
     background-position: center; /* Centra la imagen dentro del elemento */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -466,7 +460,7 @@ nav {
     height: 100%;
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-    background-image: url("../../img/blurry-gradient-haikei.png");
+    background-image: url("../img/blurry-gradient-haikei.png");
     background-size: cover; /* Asegura que la imagen cubra el elemento */
     background-position: center; /* Centra la imagen dentro del elemento */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -538,7 +532,7 @@ nav {
 }
 footer {
   color: #F0F6F6;
-  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-image: url("../img/blurry-gradient-haikei.png");
   background-size: cover; /* Asegura que la imagen cubra el elemento */
   background-position: center; /* Centra la imagen dentro del elemento */
   background-repeat: no-repeat; /* Evita que la imagen se repita */

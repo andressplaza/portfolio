@@ -10,7 +10,7 @@
     margin-bottom: 10px;
         font-size: 3rem; /* Ajusta el tamaño de la fuente según sea necesario */
         font-weight: bold; /* Opcional: ajusta el peso de la fuente si es necesario */
-        background-image: url('../../img/blurry-gradient-haikei.png'); /* Reemplaza con la ruta de tu imagen */
+        background-image: url('../img/blurry-gradient-haikei.png'); /* Reemplaza con la ruta de tu imagen */
         background-size: cover; /* Ajusta el tamaño de la imagen según el contenedor */
         background-clip: text; /* Clipa el fondo a la forma del texto */
         -webkit-background-clip: text; /* Necesario para compatibilidad con WebKit browsers (Chrome, Safari) */
@@ -39,7 +39,7 @@
     font-size: 1rem;
     text-decoration: none;
     color: #fff;
-    background-image: url('../../img/blurry-gradient-haikei.png');
+    background-image: url('../img/blurry-gradient-haikei.png');
     background-size: cover; /* Asegura que la imagen cubra el elemento */
     background-position: center; /* Centra la imagen dentro del elemento */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
