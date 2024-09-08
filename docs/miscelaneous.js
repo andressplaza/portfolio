@@ -50,9 +50,10 @@ document.querySelectorAll('.groovy').forEach(function (element) {
     });
 });
 
-document.querySelector('.hamburger').addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.toggle('show');
-}); document.querySelector('.hamburger').addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.toggle('show');
-});
+
+
+
+
+
+
 

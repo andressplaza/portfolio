@@ -14,7 +14,6 @@ $breakpoint-sm: 600px;
     background-color: #F0F6F6;
     padding: 1rem;
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
   }
 }
 
@@ -39,33 +38,31 @@ $breakpoint-sm: 600px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-position 0.5s ease;
   }
-  
+
   .datagrid-item:hover {
-      background-position: right top;
+    background-position: right top;
   }
 
-    &:hover {
-      transform: translateY(-5px); // Efecto hover para mejorar la interacción
-    }
 
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: bold;
-    }
 
-    ul {
-      list-style: none; // Elimina los puntos de las listas
-      padding: 0;
-      margin: 0;
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
 
-      li {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-      }
+  ul {
+    list-style: none; // Elimina los puntos de las listas
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
     }
   }
+}
 
 
 // Responsive adjustments for medium screens
