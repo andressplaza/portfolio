@@ -18,33 +18,42 @@
     opacity: 0;
   }
 }
+.show-on-load {
+  transform: translateY(500%);
+  transition: transform 2s ease-out;
+}
+
+.animate {
+  transform: translateY(0);
+}
+
 .hidden-left {
   opacity: 0;
   transform: translateX(-100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
-.hidden-left-onces {
+.hidden-left-once {
   opacity: 0;
   transform: translateX(-100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
-.hidden-right-onces {
+.hidden-right-once {
   opacity: 0;
   transform: translateX(100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .hidden-right {
   opacity: 0;
   transform: translateX(100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .hidden-down {
   transform: translateY(100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .hidden-down-once {
@@ -54,19 +63,19 @@
 .hidden-up {
   opacity: 0;
   transform: translateY(-100%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .hidden-up-once {
   opacity: 0;
   transform: translateY(0%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .show {
   opacity: 1;
   transform: translate(0%);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 2s;
 }
 
 .groovy {
@@ -140,7 +149,6 @@ body {
   height: 100%;
   width: 5px; /* Ajusta el grosor de la línea */
   background-color: black; /* Color de la línea */
-  transform: translateX(-50%); /* Centra la línea horizontalmente */
   z-index: 1; /* Coloca la línea detrás de otros elementos */
 }
 
@@ -300,30 +308,27 @@ nav {
   padding: 1rem 2rem;
   font-size: 1rem;
   text-decoration: none;
-  color: #000; /* Color del texto negro */
-  background-color: #fff; /* Fondo blanco */
-  border: 2px solid #000; /* Borde negro */
+  color: #fff;
+  background-color: #5C7AFF; /* Fondo blanco */
+  border: 3px solid #000; /* Borde negro */
   border-radius: 5px; /* Bordes ligeramente redondeados */
   transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 }
 
-.cv-button:hover {
-  color: #fff; /* Texto blanco al pasar el mouse */
-  background-image: url("../../img/blurry-gradient-haikei.png");
-  background-size: cover; /* Asegura que la imagen cubra el elemento */
-  background-position: center; /* Centra la imagen dentro del elemento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
 .stack {
   text-align: center;
-  z-index: 2;
-  height: 85vh;
+  z-index: 1;
+}
+.stack i {
+  display: block;
 }
 .stack h1 {
   position: relative;
   z-index: 2;
   background-color: #F0F6F6;
+  padding: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .datagrid-container {
@@ -332,8 +337,8 @@ nav {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  padding: 20px;
+  gap: 2rem;
+  padding: 2rem;
 }
 .datagrid-container .datagrid-item {
   background-color: #f4f4f4;
@@ -341,21 +346,115 @@ nav {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.datagrid-container .datagrid-item:hover {
+  transform: translateY(-5px);
+}
+.datagrid-container .datagrid-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+.datagrid-container .datagrid-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.datagrid-container .datagrid-item ul li {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: #555;
 }
 
 @media (max-width: 900px) {
   .datagrid-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  }
+  .datagrid-item h3 {
+    font-size: 1.3rem;
+  }
+  .datagrid-item li {
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 600px) {
   .datagrid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(1, auto);
   }
-  .datagrid-item {
-    padding: 15px;
+  .datagrid-item h3 {
+    font-size: 1.2rem;
+  }
+  .datagrid-item li {
+    font-size: 0.8rem;
+  }
+}
+.contact {
+  height: 30vh;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.contact .contact-content {
+  background-color: #f4f4f4;
+  margin: 0 auto;
+}
+.contact .contact-content h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.contact .contact-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.contact .contact-content .contact-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #000; /* Color del texto negro */
+  background-color: #5C7AFF;
+  border: 3px solid #000; /* Borde negro */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+.contact .contact-content .contact-button a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .contact {
+    padding: 1.5rem;
+  }
+  .contact .contact-content h1 {
+    font-size: 1.8rem;
+  }
+  .contact .contact-content p {
+    font-size: 0.9rem;
+  }
+  .contact .contact-content .contact-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 600px) {
+  .contact {
+    padding: 1rem;
+  }
+  .contact .contact-content h1 {
+    font-size: 1.5rem;
+  }
+  .contact .contact-content p {
+    font-size: 0.8rem;
+  }
+  .contact .contact-content .contact-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -365,6 +464,7 @@ nav {
     background-position: center; /* Centra la imagen dentro del elemento */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: white;
+    border-bottom: 5px solid black;
   }
   .hamburger {
     display: block;
@@ -459,7 +559,7 @@ footer {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   padding: 2rem 0; /* Espaciado arriba y abajo */
   text-align: center; /* Centra el texto */
-  border: 5px solid black;
+  border-top: 5px solid black;
 }
 
 .footer-container {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,8 +15,6 @@
 </head>
 
 <body>
-
-
     <header class="header">
         <nav>
             <div class="logo hidden-left-once">
@@ -31,8 +29,8 @@
                 </ul>
             </div>
             <button class="hamburger hidden-right-once" aria-label="Toggle menu">
-                <i class="fa fa-bars fa-xl"></i>
-                <i class="fa fa-times fa-xl" style="display: none;"></i>
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-times" style="display: none;"></i>
             </button>
 
             <div class="social-media hidden-right-once">
@@ -45,40 +43,103 @@
 
         <!-- NAV -->
 
- <!-- SECCION I N I C I O -->
-<section class="inicio">
-    <div class="inicio-contenido">
-        <h1 class="hidden-right">Hello!</h1>
-        <h2 class="hidden-right">
-            I'm
-            <h1 class="hidden-right" style="color: #5C7AFF;">Andrés Plaza,</h1>
-            <p class="hidden-right">Software Developer.</p>
-        </h2>
-        <p class="hidden-left">
-            I specialize in creating efficient and well-designed web solutions. With experience in both front-end and back-end development,
-            I enjoy transforming ideas into functional and attractive applications. I am always looking for new opportunities
-            to learn and grow in the field of technology.
-        </p>
-        <div class="cta hidden-down-once">
-            <a href="#sobremi" class="cv-button">Download CV <i class="fa-solid fa-file-import"></i></a>
-        </div>
-    </div>
-</section>
+        <!-- SECCION I N I C I O -->
+        <section class="inicio">
+            <div class="inicio-contenido">
+                <h1 class="hidden-right-once">Hello!</h1>
+                <h2 class="hidden-right-once">
+                    I'm
+                    <h1 class="hidden-right-once" translate="no" style="color: #5C7AFF;">Andrés Plaza,</h1>
+                    <p class="hidden-right-once">Software Developer.</p>
+                </h2>
+                <p class="hidden-left-once">
+                    I specialize in creating efficient and well-designed web solutions. With experience in both
+                    front-end and back-end development,
+                    I enjoy transforming ideas into functional and attractive applications. I am always looking for new
+                    opportunities
+                    to learn and grow in the field of technology.
+                </p>
+                <div class="cta show-on-load">
+                    <a href="#sobremi" class="cv-button">Download CV <i class="fa-solid fa-file-import"></i></a>
+                </div>
+            </div>
+        </section>
 
 
 
         </section>
-        <div class="stack">
+        <section class="stack">
             <h1>My Skills</h1>
             <div class="datagrid-container">
-                <div class="datagrid-item">Item 1</div>
-                <div class="datagrid-item">Item 2</div>
-                <div class="datagrid-item">Item 3</div>
-                <div class="datagrid-item">Item 4</div>
-                <div class="datagrid-item">Item 5</div>
-                <div class="datagrid-item">Item 6</div>
+                <div class="datagrid-item hidden-left">
+                    <h3><i class="fas fa-laptop-code"></i> Back-end Development</h3>
+                    <ul>
+                        <li>PHP (Laravel)</li>
+                        <li>PostgreSQL</li>
+                        <li>APIs RESTful</li>
+                    </ul>
+                </div>
+
+                <div class="datagrid-item hidden-left">
+                    <h3><i class="fas fa-cogs"></i> Software Architecture</h3>
+                    <ul>
+                        <li>Domain-Driven Design (DDD)</li>
+                        <li>Design Patterns (Factory, Singleton, etc.)</li>
+                        <li>SOLID Principles</li>
+                    </ul>
+                </div>
+
+                <div class="datagrid-item hidden-left">
+                    <h3><i class="fas fa-database"></i> Database Management</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>Elasticsearch</li>
+                    </ul>
+                </div>
+
+                <div class="datagrid-item hidden-right">
+                    <h3><i class="fas fa-tools"></i> DevOps & Infrastructure</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+
+                <div class="datagrid-item hidden-right">
+                    <h3><i class="fas fa-project-diagram"></i> Agile & Collaboration</h3>
+                    <ul>
+                        <li>Jira</li>
+                        <li>Kanban</li>
+                        <li>Scrum</li>
+                    </ul>
+                </div>
+
+                <div class="datagrid-item hidden-right">
+                    <h3><i class="fas fa-brain"></i></i> Familiar with...</h3>
+                    <ul>
+                        <li>JavaScript (Vue.js, ES6+)</li>
+                        <li>SCSS</li>
+                        <li>Python (Pandas and Machine Learning libraries)</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="contact">
+            <div class="contact-content">
+                <h1>Let's Get in Touch!</h1>
+                <p>If you have any questions or just want to say hello, feel free to reach out to me!</p>
+                <div class="contact-button">
+                    <a href="mailto:andres.pl4za@gmail.com" class="contact-link">Send me an email <i class="fa-solid fa-share"></i></a>
+                </div>
+            </div>
+        </section>
+
+
+
+
 
     </div>
     <footer>

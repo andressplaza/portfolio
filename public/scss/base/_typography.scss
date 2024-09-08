@@ -23,7 +23,6 @@ body {
     height: 100%;
     width: 5px; /* Ajusta el grosor de la línea */
     background-color: black; /* Color de la línea */
-    transform: translateX(-50%); /* Centra la línea horizontalmente */
     z-index: 1; /* Coloca la línea detrás de otros elementos */
 }
 

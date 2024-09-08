@@ -1,55 +1,97 @@
-
-// Define breakpoints for responsiveness
 $breakpoint-md: 900px;
 $breakpoint-sm: 600px;
 
 .stack {
-    text-align: center;
+  text-align: center;
+  z-index: 1;
+
+  i{
+    display: block;
+  }
+
+  h1 {
+    position: relative;
     z-index: 2;
-    height: 85vh;
-    h1 {
-        position: relative;
-        z-index: 2;
-        background-color:#F0F6F6;
-    }
+    background-color: #F0F6F6;
+    padding: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .datagrid-container {
-    background-color:#F0F6F6;
-    height: auto;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // Start with 3 columns
-    grid-template-rows: repeat(3, 1fr); // Start with 3 rows
-    padding: 20px; // Padding around the grid
-    
-    .datagrid-item {
-      background-color: #f4f4f4;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #F0F6F6;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+
+  .datagrid-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px); // Efecto hover para mejorar la interacción
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    ul {
+      list-style: none; // Elimina los puntos de las listas
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
     }
   }
-  
-  // Responsive adjustments for medium screens
-  @media (max-width: $breakpoint-md) {
-    .datagrid-container {
-      grid-template-columns: repeat(2, 1fr); // Reduce to 2 columns on medium screens
-      grid-template-rows: repeat(5, 1fr); // Adjust rows to fit content
+}
+
+// Responsive adjustments for medium screens
+@media (max-width: $breakpoint-md) {
+  .datagrid-container {
+    grid-template-columns: repeat(2, 1fr); // Reduce to 2 columns on medium screens
+  }
+
+  .datagrid-item {
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    li {
+      font-size: 0.9rem;
     }
   }
-  
-  // Responsive adjustments for small screens
-  @media (max-width: $breakpoint-sm) {
-    .datagrid-container {
-      grid-template-columns: 1fr; // Single column layout on small screens
-      grid-template-rows: repeat(9, 1fr); // Each item gets its own row
+}
+
+// Responsive adjustments for small screens
+@media (max-width: $breakpoint-sm) {
+  .datagrid-container {
+    grid-template-columns: 1fr; // Single column layout on small screens
+    grid-template-rows: repeat(1,auto);
+  }
+
+  .datagrid-item {
+    h3 {
+      font-size: 1.2rem;
     }
-  
-    .datagrid-item {
-      padding: 15px; // Adjust padding for smaller screens
+
+    li {
+      font-size: 0.8rem;
     }
   }
-  
-  
+}
