@@ -125,7 +125,7 @@
   font-style: normal;
 }
 * {
-  cursor: url("../../img/dedo.png"), auto;
+  cursor: url("/public/img/dedo.png"), auto;
 }
 
 body {
