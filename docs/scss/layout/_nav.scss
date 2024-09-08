@@ -10,31 +10,6 @@ nav {
   align-items: center;
 }
 
-.logo {
-  flex: 1;
-  text-align: left;
-  margin-right: auto;
-  /* Asegura que el logo esté pegado a la izquierda */
-}
-
-.nav-links {
-  flex: 2;
-  text-align: center;
-}
-
-.nav-links ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-}
-
 .social-media {
   flex: 0;
   display: flex;
@@ -44,71 +19,6 @@ nav {
 }
 
 
-/* Estilos para el menú de hamburguesa */
-.hamburger {
-
-  display: none;
-  background: none;
-  border: none;
-  color: #201E1F;
-  cursor:none;
-  
-  z-index: 9999;
-  /* Asegura que esté sobre todo lo demás */
-}
-
 @media screen and (max-width: 900px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    /* Oculta los enlaces en pantallas pequeñas */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Fondo oscuro con transparencia */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9998;
-    /* Asegura que esté justo debajo del botón de hamburguesa */
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .hamburger .fa-bars {
-    display: block;
-  }
-
-  .hamburger .fa-times {
-    display: none;
-  }
-
-  .nav-links.show~.hamburger .fa-bars {
-    display: none;
-  }
-
-  .nav-links.show~.hamburger .fa-times {
-    display: block;
-  }
-
-  .social-media {
-    display: none;
-    /* Oculta las redes sociales en pantallas pequeñas */
-  }
+  
 }
