@@ -39,17 +39,6 @@ hiddenElements2.forEach((el) => observer.observe(el));
 hiddenFixedElements.forEach((el) => onceObserver.observe(el));
 hiddenFixedElements2.forEach((el) => onceObserver.observe(el));
 
-document.querySelector('.hamburger').addEventListener('click', function () {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
-
-    // Alternar entre el ícono de hamburguesa y el de cerrar
-    const barsIcon = this.querySelector('.fa-bars');
-    const timesIcon = this.querySelector('.fa-times');
-    barsIcon.style.display = barsIcon.style.display === 'none' ? 'block' : 'none';
-    timesIcon.style.display = timesIcon.style.display === 'none' ? 'block' : 'none';
-});
-
 
 document.querySelectorAll('.groovy').forEach(function (element) {
     element.addEventListener('mouseenter', function () {

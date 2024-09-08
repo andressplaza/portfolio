@@ -17,26 +17,18 @@
 <body>
     <header class="header">
         <nav>
-            <div class="logo hidden-left-once">
-                <h1 class="groovy">Portfolio :)</h1>
-            </div>
-
-            <div class="nav-links">
-                <ul>
-                    <li class="groovy hidden-up-once"><a>Contact</a></li>
-                    <li class="groovy hidden-up-once"><a>About</a></li>
-                    <li class="groovy hidden-up-once"><a>Skills<a></a></li>
-                </ul>
-            </div>
-            <button class="hamburger hidden-right-once" aria-label="Toggle menu">
-                <i class="fa fa-bars"></i>
-                <i class="fa fa-times" style="display: none;"></i>
-            </button>
+           
+            
 
             <div class="social-media hidden-right-once">
                 <a href="#"><i class="fa-brands fa-linkedin fa-xl groovy" style="color: #5C7AFF;"></i></a>
                 <a href="#"><i class="fa-brands fa-github fa-xl groovy" style="color: #201E1F;"></i></a>
             </div>
+
+            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-sun" id="icon-light"></i>
+                <i class="fas fa-moon" id="icon-dark"></i>
+            </button>
         </nav>
     </header>
     <div class="container">
@@ -44,7 +36,7 @@
         <!-- NAV -->
 
         <!-- SECCION I N I C I O -->
-        <section class="inicio">
+        <section class="inicio" id="inicio">
             <div class="inicio-contenido">
                 <h1 class="hidden-right-once">Hello!</h1>
                 <h2 class="hidden-right-once">
@@ -53,22 +45,27 @@
                     <p class="hidden-right-once">Software Developer.</p>
                 </h2>
                 <p class="hidden-left-once">
-                    I specialize in creating efficient and well-designed web solutions, with a focus on back-end development using Laravel. 
-                    I enjoy building strong APIs and RESTful services that work smoothly with front-end components to provide a great user experience.
+                    I specialize in creating efficient and well-designed web solutions, with a focus on back-end
+                    development using Laravel.
+                    I enjoy building strong APIs and RESTful services that work smoothly with front-end components to
+                    provide a great user experience.
                 </p>
-                
+
                 <p class="hidden-left-once">
-                    I’m skilled in managing relational databases and ensuring that data is handled and optimized effectively. 
+                    I’m skilled in managing relational databases and ensuring that data is handled and optimized
+                    effectively.
                     My goal is to deliver reliable, high-quality applications that perform well and meet your needs.
                 </p>
-                
+
                 <p class="hidden-left-once">
-                    Beyond my technical skills, I’m a problem-solver who loves learning about new technologies and tackling fresh challenges. 
-                    I enjoy collaborating with others and finding creative solutions. My aim is to build web applications that not only work well 
+                    Beyond my technical skills, I’m a problem-solver who loves learning about new technologies and
+                    tackling fresh challenges.
+                    I enjoy collaborating with others and finding creative solutions. My aim is to build web
+                    applications that not only work well
                     but also make a positive impact on users and clients.
                 </p>
-                
-                
+
+
                 <div class="cta">
                     <a href="#sobremi" class="cv-button">Download CV <i class="fa-solid fa-file-import"></i></a>
                 </div>
@@ -78,7 +75,7 @@
 
 
         </section>
-        <section class="stack">
+        <section class="stack" id="stack">
             <h1>Skills & Competencies</h1>
             <div class="datagrid-container">
                 <div class="datagrid-item hidden-left">
@@ -153,7 +150,7 @@
 
 
 
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="contact-content">
                 <h1>Let's Get in Touch!</h1>
                 <p>If you have any questions or just want to say hello, feel free to reach out to me!</p>
