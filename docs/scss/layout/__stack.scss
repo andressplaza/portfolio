@@ -2,16 +2,15 @@ $breakpoint-md: 900px;
 $breakpoint-sm: 600px;
 
 .stack {
+  width: 80%;
   text-align: center;
-  z-index: 1;
+  margin: auto;
 
-  i{
+  i {
     display: block;
   }
 
   h1 {
-    position: relative;
-    z-index: 2;
     background-color: #F0F6F6;
     padding: 1rem;
     font-size: 2.5rem;
@@ -24,13 +23,17 @@ $breakpoint-sm: 600px;
   height: auto;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 2rem;
 
   .datagrid-item {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    color: white;
+    background-image: url('../../img/blurry-gradient-haikei.png');
+    background-size: cover;
+    background-position: center;
+    /* Evita que la imagen se repita */
+    border: 2px solid #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,10 +43,10 @@ $breakpoint-sm: 600px;
       transform: translateY(-5px); // Efecto hover para mejorar la interacción
     }
 
-    h3 {
+    h2 {
       margin-bottom: 1rem;
-      font-size: 1.5rem;
-      color: #333;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
     ul {
@@ -55,8 +58,17 @@ $breakpoint-sm: 600px;
         font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 0.5rem;
-        color: #555;
       }
+
+      li:nth-child(2) {
+        position: relative;
+        padding: 0.3rem;
+        background: 
+    linear-gradient(white, white) top / 20% 2px no-repeat,
+    linear-gradient(white, white) bottom / 20% 2px no-repeat;
+  background-position: center top, center bottom;
+      }
+
     }
   }
 }
@@ -82,7 +94,7 @@ $breakpoint-sm: 600px;
 @media (max-width: $breakpoint-sm) {
   .datagrid-container {
     grid-template-columns: 1fr; // Single column layout on small screens
-    grid-template-rows: repeat(1,auto);
+    grid-template-rows: repeat(1, auto);
   }
 
   .datagrid-item {

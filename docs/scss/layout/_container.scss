@@ -1,5 +1,9 @@
+
+
 .container {
-    margin: auto;
-    width: 80%;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: 1fr;
+    position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
 }

@@ -134,30 +134,6 @@ body {
   font-size: larger;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
-  grid-template-rows: 1fr;
-  position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 5px; /* Ajusta el grosor de la línea */
-  background-color: black; /* Color de la línea */
-  z-index: 1; /* Coloca la línea detrás de otros elementos */
-}
-
-.inicio-contenido {
-  position: relative;
-  z-index: 2;
-  background-color: #F0F6F6;
-}
-
 html, body {
   background: #F0F6F6;
   background-repeat: no-repeat;
@@ -165,9 +141,11 @@ html, body {
 }
 
 .container {
-  margin: auto;
-  width: 80%;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: 1fr;
+  position: relative; /* Necesario para el posicionamiento del pseudo-elemento */
 }
 
 .header {
@@ -273,19 +251,21 @@ nav {
   }
 }
 .inicio {
-  display: grid;
-  grid-template-columns: 1fr; /* Una sola columna */
-  grid-template-rows: repeat(2, auto); /* Tres filas de altura automática */
-  gap: 1.5rem; /* Espacio entre las filas */
   text-align: center;
   padding: 2rem;
-  align-items: center; /* Centra los elementos verticalmente en cada fila */
-  height: 95vh; /* Ajusta según tus necesidades; aquí ocupa toda la altura de la ventana */
 }
 
 .inicio h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  font-size: 3rem; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-weight: bold; /* Opcional: ajusta el peso de la fuente si es necesario */
+  background-image: url("../../img/blurry-gradient-haikei.png"); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover; /* Ajusta el tamaño de la imagen según el contenedor */
+  background-clip: text; /* Clipa el fondo a la forma del texto */
+  -webkit-background-clip: text; /* Necesario para compatibilidad con WebKit browsers (Chrome, Safari) */
+  color: transparent; /* Hace que el texto sea transparente para que solo se vea el fondo */
+  display: inline-block; /* Asegura que el fondo se ajuste al tamaño del texto */
 }
 
 .inicio h2 {
@@ -309,22 +289,28 @@ nav {
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
-  background-color: #5C7AFF; /* Fondo blanco */
-  border: 3px solid #000; /* Borde negro */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-size: cover; /* Asegura que la imagen cubra el elemento */
+  background-position: center; /* Centra la imagen dentro del elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border: 3px solid #ffffff; /* Borde negro */
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  transition: background-position 0.5s ease;
+}
+
+.cv-button:hover {
+  background-position: right top;
 }
 
 .stack {
+  width: 80%;
   text-align: center;
-  z-index: 1;
+  margin: auto;
 }
 .stack i {
   display: block;
 }
 .stack h1 {
-  position: relative;
-  z-index: 2;
   background-color: #F0F6F6;
   padding: 1rem;
   font-size: 2.5rem;
@@ -336,13 +322,17 @@ nav {
   height: auto;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 2rem;
 }
 .datagrid-container .datagrid-item {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
+  color: white;
+  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-size: cover;
+  background-position: center;
+  /* Evita que la imagen se repita */
+  border: 2px solid #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -351,10 +341,10 @@ nav {
 .datagrid-container .datagrid-item:hover {
   transform: translateY(-5px);
 }
-.datagrid-container .datagrid-item h3 {
+.datagrid-container .datagrid-item h2 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .datagrid-container .datagrid-item ul {
   list-style: none;
@@ -365,7 +355,12 @@ nav {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 0.5rem;
-  color: #555;
+}
+.datagrid-container .datagrid-item ul li:nth-child(2) {
+  position: relative;
+  padding: 0.3rem;
+  background: linear-gradient(white, white) top/20% 2px no-repeat, linear-gradient(white, white) bottom/20% 2px no-repeat;
+  background-position: center top, center bottom;
 }
 
 @media (max-width: 900px) {
@@ -392,18 +387,15 @@ nav {
   }
 }
 .contact {
-  height: 30vh;
   padding: 2rem;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 .contact .contact-content {
   background-color: #f4f4f4;
   margin: 0 auto;
 }
 .contact .contact-content h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #333;
   margin-bottom: 1rem;
 }
@@ -417,9 +409,12 @@ nav {
   padding: 1rem 2rem;
   text-decoration: none;
   color: #000; /* Color del texto negro */
-  background-color: #5C7AFF;
-  border: 3px solid #000; /* Borde negro */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
+  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-size: cover; /* Asegura que la imagen cubra el elemento */
+  background-position: center; /* Centra la imagen dentro del elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  border: 3px solid #ffffff; /* Borde negro */
+  border-radius: 8px; /* Bordes ligeramente redondeados */
   transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 }
 .contact .contact-content .contact-button a {
@@ -442,21 +437,6 @@ nav {
     font-size: 0.9rem;
   }
 }
-@media (max-width: 600px) {
-  .contact {
-    padding: 1rem;
-  }
-  .contact .contact-content h1 {
-    font-size: 1.5rem;
-  }
-  .contact .contact-content p {
-    font-size: 0.8rem;
-  }
-  .contact .contact-content .contact-link {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-}
 @media screen and (max-width: 900px) {
   .header {
     background-image: url("../../img/blurry-gradient-haikei.png");
@@ -464,13 +444,15 @@ nav {
     background-position: center; /* Centra la imagen dentro del elemento */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: white;
-    border-bottom: 5px solid black;
   }
   .hamburger {
     display: block;
     font-size: 1.3rem;
     color: white;
     /* Tamaño de los íconos */
+  }
+  .cv-button:active {
+    background-position: right top;
   }
   .social-media {
     display: none;
@@ -533,6 +515,9 @@ nav {
     background-color: #5C7AFF;
     color: white;
   }
+  .cv-button:active {
+    background-position: right top;
+  }
   nav {
     grid-template-columns: auto;
     justify-items: center;
@@ -553,10 +538,13 @@ nav {
 }
 footer {
   color: #F0F6F6;
-  background-color: #5C7AFF;
+  background-image: url("../../img/blurry-gradient-haikei.png");
+  background-size: cover; /* Asegura que la imagen cubra el elemento */
+  background-position: center; /* Centra la imagen dentro del elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
   padding: 2rem 0; /* Espaciado arriba y abajo */
   text-align: center; /* Centra el texto */
-  border-top: 5px solid black;
+  border-top: 5px solid rgb(255, 254, 254);
 }
 
 .footer-container {

@@ -3,18 +3,15 @@ $breakpoint-sm: 600px;
 
 .contact {
 
-    height: 30vh;
     padding: 2rem;
     text-align: center;
-    position: relative;
-    z-index: 1;
 
     .contact-content {
         background-color: #f4f4f4;
         margin: 0 auto;
 
         h1 {
-            font-size: 2rem;
+            font-size: 3rem;
             color: #333;
             margin-bottom: 1rem;
         }
@@ -31,9 +28,12 @@ $breakpoint-sm: 600px;
             padding: 1rem 2rem;
             text-decoration: none;
             color: #000; /* Color del texto negro */
-            background-color: #5C7AFF;
-            border: 3px solid #000; /* Borde negro */
-            border-radius: 5px; /* Bordes ligeramente redondeados */
+            background-image: url('../../img/blurry-gradient-haikei.png');
+            background-size: cover; /* Asegura que la imagen cubra el elemento */
+            background-position: center; /* Centra la imagen dentro del elemento */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            border: 3px solid #ffffff; /* Borde negro */
+            border-radius: 8px; /* Bordes ligeramente redondeados */
             transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
 
             a {
@@ -67,28 +67,6 @@ $breakpoint-sm: 600px;
             .contact-link {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.9rem;
-            }
-        }
-    }
-}
-
-// Responsive adjustments for small screens
-@media (max-width: $breakpoint-sm) {
-    .contact {
-        padding: 1rem;
-
-        .contact-content {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 0.8rem;
-            }
-
-            .contact-link {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
             }
         }
     }

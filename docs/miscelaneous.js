@@ -39,13 +39,6 @@ hiddenElements2.forEach((el) => observer.observe(el));
 hiddenFixedElements.forEach((el) => onceObserver.observe(el));
 hiddenFixedElements2.forEach((el) => onceObserver.observe(el));
 
-document.addEventListener("DOMContentLoaded", function () {
-    const element = document.querySelector('.show-on-load');
-    setTimeout(() => {
-        element.classList.add('animate'); // Agrega la clase que inicia la animación
-    }, 100); // Ajusta el tiempo de retraso si es necesario
-});
-
 document.querySelector('.hamburger').addEventListener('click', function () {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
