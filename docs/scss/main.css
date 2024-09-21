@@ -106,6 +106,18 @@ footer {
   color: white;
 }
 
+body.dark-mode #name {
+  animation: pulsate 1.5s infinite alternate;
+}
+
+body.dark-mode .datagrid-item {
+  border: 2px solid var(--main-color);
+}
+
+body.dark-mode button {
+  border: 2px solid var(--main-color);
+}
+
 body.dark-mode {
   background-color: #121212;
   color: #E0E0E0;
@@ -128,6 +140,14 @@ body.light-mode .fa-github {
   transition: color 0.3s, opacity 0.3s;
 }
 
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 10px #fff, 0 0 20px #bc13fe, 0 0 30px #bc13fe, 0 0 40px #bc13fe, 0 0 50px #bc13fe, 0 0 70px #bc13fe;
+  }
+  0% {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #bc13fe, 0 0 15px #bc13fe, 0 0 20px #bc13fe, 0 0 25px #bc13fe, 0 0 30px #bc13fe;
+  }
+}
 .groovy {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -198,7 +218,7 @@ body.dark-mode {
   --body-color: #121212;
   --text-color: #E0E0E0;
   --title-color: #FFFFFF;
-  --main-color: #BB86FC;
+  --main-color: #bc13fe;
   --light-text-color: #BBBBBB;
   --button-bg-color: #333333;
   --button-text-color: #FFFFFF;
@@ -320,7 +340,6 @@ nav {
   padding: 2rem;
 }
 .datagrid-container .datagrid-item {
-  border: 2px solid #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
