@@ -2,7 +2,7 @@ $breakpoint-md: 900px;
 $breakpoint-sm: 600px;
 
 .stack {
-  width: 80%;
+  width: 85%;
   text-align: center;
   margin: auto;
 
@@ -17,7 +17,6 @@ $breakpoint-sm: 600px;
 }
 
 .datagrid-container {
-  height: auto;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -64,6 +63,10 @@ $breakpoint-sm: 600px;
     grid-template-columns: repeat(2, 1fr); // Reduce to 2 columns on medium screens
   }
 
+  .stack{
+    width: 100%;
+  }
+
   .datagrid-item {
     h3 {
       font-size: 1.3rem;
@@ -80,6 +83,10 @@ $breakpoint-sm: 600px;
   .datagrid-container {
     grid-template-columns: 1fr; // Single column layout on small screens
     grid-template-rows: repeat(1, auto);
+  }
+
+  .stack{
+    width: 100%;
   }
 
   .datagrid-item {

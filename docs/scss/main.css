@@ -78,32 +78,69 @@
   transition: opacity 1s, transform 2s;
 }
 
-#sun-icon, #moon-icon {
-  display: none; /* Ambos ocultos por defecto */
+#sun-icon,
+#moon-icon {
+  display: none;
+  /* Ambos ocultos por defecto */
+  color: rgb(51, 51, 51);
 }
 
 .light-mode #moon-icon {
-  display: inline; /* Mostrar la luna en modo claro */
+  display: inline;
+  /* Mostrar la luna en modo claro */
+}
+
+footer {
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.light-mode .datagrid-item {
+  background-color: #FFFFFF;
+  /* Fondo blanco para modo claro */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  padding: 20px;
+  /* Espaciado interno */
+  margin: 15px;
+  /* Espaciado externo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+  transition: box-shadow 0.3s;
+  /* Transición suave para efectos */
 }
 
 .dark-mode #sun-icon {
-  display: inline; /* Mostrar el sol en modo oscuro */
+  display: inline;
+  /* Mostrar el sol en modo oscuro */
+  color: white;
 }
 
 /* Estilos para el modo oscuro */
 body.dark-mode {
-  background-color: #121212; /* Fondo oscuro */
-  color: #E0E0E0; /* Texto claro */
+  background-color: #121212;
+  /* Fondo oscuro */
+  color: #E0E0E0;
+  /* Texto claro */
 }
 
 .dark-mode button {
-  background-color: #333333; /* Fondo de botón oscuro */
-  color: #FFFFFF; /* Texto de botón claro */
-  border: 1px solid #444444; /* Borde suave */
+  background-color: #333333;
+  /* Fondo de botón oscuro */
+  border: 1px solid #444444;
+  /* Borde suave */
 }
 
-.dark-mode {
-  color: white;
+body.dark-mode .fa-github {
+  color: #FFFFFF; /* Cambiar el color de los íconos a blanco */
+  opacity: 0.8; /* Hacer que los íconos sean ligeramente transparentes */
+  transition: color 0.3s, opacity 0.3s; /* Transición suave */
+}
+
+body.light-mode .fa-github {
+  color: #0b0b0b; /* Cambiar el color de los íconos a blanco */
+  opacity: 0.8; /* Hacer que los íconos sean ligeramente transparentes */
+  transition: color 0.3s, opacity 0.3s; /* Transición suave */
 }
 
 .groovy {
@@ -245,12 +282,10 @@ nav {
 .inicio h2 {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #333;
 }
 
 .inicio p {
   font-size: 1.1rem;
-  color: #666;
   margin-bottom: 30px;
   max-width: 700px;
   margin-left: auto;
@@ -262,7 +297,7 @@ nav {
 }
 
 .stack {
-  width: 80%;
+  width: 85%;
   text-align: center;
   margin: auto;
 }
@@ -275,7 +310,6 @@ nav {
 }
 
 .datagrid-container {
-  height: auto;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -312,6 +346,9 @@ nav {
   .datagrid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .stack {
+    width: 100%;
+  }
   .datagrid-item h3 {
     font-size: 1.3rem;
   }
@@ -323,6 +360,9 @@ nav {
   .datagrid-container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1, auto);
+  }
+  .stack {
+    width: 100%;
   }
   .datagrid-item h3 {
     font-size: 1.2rem;
@@ -393,7 +433,6 @@ nav {
 footer {
   padding: 2rem 0; /* Espaciado arriba y abajo */
   text-align: center; /* Centra el texto */
-  border-top: 5px solid rgb(255, 254, 254);
 }
 
 .footer-container {
