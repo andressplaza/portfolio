@@ -140,6 +140,18 @@ body.light-mode .fa-github {
   transition: color 0.3s, opacity 0.3s;
 }
 
+body.dark-mode .fa-linkedin {
+  color: #FFFFFF;
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+body.light-mode .fa-linkedin {
+  color: #0b0b0b;
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+
 @keyframes pulsate {
   100% {
     text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 10px #fff, 0 0 20px #bc13fe, 0 0 30px #bc13fe, 0 0 40px #bc13fe, 0 0 50px #bc13fe, 0 0 70px #bc13fe;
