@@ -80,7 +80,7 @@
 #sun-icon,
 #moon-icon {
   display: none;
-  color: rgb(51, 51, 51);
+  color: var(--title-color);
 }
 
 .light-mode #moon-icon {
@@ -88,12 +88,12 @@
 }
 
 footer {
-  background-color: rgb(51, 51, 51);
-  color: white;
+  background-color: var(--title-color);
+  color: var(--button-text-color);
 }
 
 .light-mode .datagrid-item {
-  background-color: #FFFFFF;
+  background-color: var(--body-color);
   border-radius: 5px;
   padding: 20px;
   margin: 15px;
@@ -103,61 +103,56 @@ footer {
 
 .dark-mode #sun-icon {
   display: inline;
-  color: white;
-}
-
-body.dark-mode #name {
-  animation: pulsate 1.5s infinite alternate;
-}
-
-body.dark-mode .datagrid-item {
-  border: 2px solid var(--main-color);
-}
-
-body.dark-mode button {
-  border: 2px solid var(--main-color);
+  color: var(--button-text-color);
 }
 
 body.dark-mode {
-  background-color: #121212;
-  color: #E0E0E0;
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
-
-.dark-mode button {
-  background-color: #333333;
-  border: 1px solid #444444;
+body.dark-mode #name {
+  animation: pulsate 1.5s infinite alternate;
 }
-
-body.dark-mode .fa-github {
-  color: #FFFFFF;
-  opacity: 0.8;
-  transition: color 0.3s, opacity 0.3s;
+body.dark-mode .datagrid-item {
+  border: 2px solid var(--main-color);
 }
-
-body.light-mode .fa-github {
-  color: #0b0b0b;
-  opacity: 0.8;
-  transition: color 0.3s, opacity 0.3s;
+body.dark-mode button {
+  background-color: var(--button-bg-color);
+  border: 2px solid var(--main-color);
 }
-
+body.dark-mode .fa-github,
 body.dark-mode .fa-linkedin {
-  color: #FFFFFF;
+  color: var(--button-text-color);
   opacity: 0.8;
   transition: color 0.3s, opacity 0.3s;
 }
-
-body.light-mode .fa-linkedin {
-  color: #0b0b0b;
-  opacity: 0.8;
+body.dark-mode footer {
+  color: var(--text-color);
+  background-color: var(--body-color);
+  border-top: 1.5px solid var(--main-color);
+}
+body.light-mode .fa-github {
+  color: var(--light-text-color);
   transition: color 0.3s, opacity 0.3s;
+}
+body.light-mode .fa-linkedin {
+  color: var(--light-text-color);
+  transition: color 0.3s, opacity 0.3s;
+  color: rgb(66, 66, 241);
+}
+body.light-mode footer .fa-github {
+  color: var(--body-color);
+}
+body.light-mode footer .fa-linkedin {
+  color: var(--body-color);
 }
 
 @keyframes pulsate {
   100% {
-    text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 10px #fff, 0 0 20px #bc13fe, 0 0 30px #bc13fe, 0 0 40px #bc13fe, 0 0 50px #bc13fe, 0 0 70px #bc13fe;
+    text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 10px #fff, 0 0 20px var(--main-color), 0 0 30px var(--main-color), 0 0 40px var(--main-color), 0 0 50px var(--main-color), 0 0 70px var(--main-color);
   }
   0% {
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #bc13fe, 0 0 15px #bc13fe, 0 0 20px #bc13fe, 0 0 25px #bc13fe, 0 0 30px #bc13fe;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px var(--main-color), 0 0 15px var(--main-color), 0 0 20px var(--main-color), 0 0 25px var(--main-color), 0 0 30px var(--main-color);
   }
 }
 .groovy {
@@ -232,14 +227,12 @@ body.dark-mode {
   --title-color: #FFFFFF;
   --main-color: #bc13fe;
   --light-text-color: #BBBBBB;
-  --button-bg-color: #333333;
-  --button-text-color: #FFFFFF;
 }
 
 body {
   background: var(--body-color);
   color: var(--text-color);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 h1,
@@ -252,7 +245,7 @@ h6 {
 }
 
 a {
-  color: var(--main-color);
+  color: inherit;
 }
 
 .subtitle {
@@ -269,7 +262,6 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 button a {
   text-decoration: none;
   color: inherit;
@@ -438,30 +430,6 @@ nav {
   .contact .contact-content .contact-link {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .cv-button:active {
-    background-position: right top;
-  }
-  .stack-datagrid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-  }
-}
-@media screen and (max-width: 600px) {
-  .cv-button:active {
-    background-position: right top;
-  }
-  nav {
-    grid-template-columns: auto;
-    justify-items: center;
-    text-align: center;
-  }
-  .datagrid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-    gap: 2rem;
   }
 }
 footer {
