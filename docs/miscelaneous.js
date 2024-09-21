@@ -70,15 +70,6 @@ const toggleTheme = () => {
     }
 };
 
+
 // Escuchar el clic para alternar el modo
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-
-
-
-
-
-
-
-
-
-

@@ -77,6 +77,62 @@
   transition: opacity 1s, transform 2s;
 }
 
+body.light-mode {
+  --body-color: #FFFFFF;
+  --text-color: #000000;
+  --title-color: #333333;
+  --main-color: #007BFF;
+  --light-text-color: #555555;
+  --button-bg-color: #007BFF;
+  --button-text-color: #FFFFFF;
+}
+
+body.dark-mode {
+  --body-color: #121212;
+  --text-color: #E0E0E0;
+  --title-color: #FFFFFF;
+  --main-color: #bc13fe;
+  --light-text-color: #BBBBBB;
+}
+
+body {
+  background: var(--body-color);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+a {
+  color: inherit;
+}
+
+.subtitle {
+  color: var(--light-text-color);
+}
+
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border-radius: 8px;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #sun-icon,
 #moon-icon {
   display: none;
@@ -209,62 +265,6 @@ body {
   font-family: "SpaceGrotesk";
   color: #201E1F;
   font-size: larger;
-}
-
-body.light-mode {
-  --body-color: #FFFFFF;
-  --text-color: #000000;
-  --title-color: #333333;
-  --main-color: #007BFF;
-  --light-text-color: #555555;
-  --button-bg-color: #007BFF;
-  --button-text-color: #FFFFFF;
-}
-
-body.dark-mode {
-  --body-color: #121212;
-  --text-color: #E0E0E0;
-  --title-color: #FFFFFF;
-  --main-color: #bc13fe;
-  --light-text-color: #BBBBBB;
-}
-
-body {
-  background: var(--body-color);
-  color: var(--text-color);
-  transition: background 0.5s ease, color 0.5s ease;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--title-color);
-}
-
-a {
-  color: inherit;
-}
-
-.subtitle {
-  color: var(--light-text-color);
-}
-
-button {
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  border-radius: 8px;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-button a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .container {
