@@ -10,12 +10,6 @@
     margin-bottom: 10px;
         font-size: 3rem; /* Ajusta el tamaño de la fuente según sea necesario */
         font-weight: bold; /* Opcional: ajusta el peso de la fuente si es necesario */
-        background-image: url('../img/blurry-gradient-haikei.png'); /* Reemplaza con la ruta de tu imagen */
-        background-size: cover; /* Ajusta el tamaño de la imagen según el contenedor */
-        background-clip: text; /* Clipa el fondo a la forma del texto */
-        -webkit-background-clip: text; /* Necesario para compatibilidad con WebKit browsers (Chrome, Safari) */
-        color: transparent; /* Hace que el texto sea transparente para que solo se vea el fondo */
-        display: inline-block; /* Asegura que el fondo se ajuste al tamaño del texto */
 }
 
 .inicio h2 {
@@ -33,23 +27,7 @@
     margin-right: auto;
 }
 
-.cv-button {
+.cv-button a {
     display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    text-decoration: none;
-    color: #fff;
-    background-image: url('../img/blurry-gradient-haikei.png');
-    background-size: cover; /* Asegura que la imagen cubra el elemento */
-    background-position: center; /* Centra la imagen dentro del elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border: 3px solid #ffffff; /* Borde negro */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    transition: background-position 0.5s ease;
 }
-
-.cv-button:hover {
-    background-position: right top;
-}
-
 

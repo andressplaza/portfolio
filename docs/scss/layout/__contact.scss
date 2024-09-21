@@ -7,12 +7,10 @@ $breakpoint-sm: 600px;
     text-align: center;
 
     .contact-content {
-        background-color: #f4f4f4;
         margin: 0 auto;
 
         h1 {
             font-size: 3rem;
-            color: #333;
             margin-bottom: 1rem;
         }
 
@@ -25,28 +23,8 @@ $breakpoint-sm: 600px;
 
         .contact-button {
             display: inline-block;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            color: #000; /* Color del texto negro */
-            background-image: url('../img/blurry-gradient-haikei.png');
-            background-size: cover; /* Asegura que la imagen cubra el elemento */
-            background-position: center; /* Centra la imagen dentro del elemento */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            border: 3px solid #ffffff; /* Borde negro */
-            border-radius: 8px; /* Bordes ligeramente redondeados */
-            transition: background-position 0.5s ease;
 
-            a {
-                font-size: 1rem;
-                text-decoration: none;
-                color:#fff;
-            }
-
-            &:hover {
-               background-position: right top;
-            }
-
-
+           
         }
     }
 }

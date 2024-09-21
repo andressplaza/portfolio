@@ -1,0 +1,29 @@
+#sun-icon, #moon-icon {
+    display: none; /* Ambos ocultos por defecto */
+}
+
+.light-mode #moon-icon {
+    display: inline; /* Mostrar la luna en modo claro */
+}
+
+.dark-mode #sun-icon {
+    display: inline; /* Mostrar el sol en modo oscuro */
+}
+
+
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Texto claro */
+}
+
+.dark-mode button {
+    background-color: #333333; /* Fondo de botón oscuro */
+    color: #FFFFFF; /* Texto de botón claro */
+    border: 1px solid #444444; /* Borde suave */
+}
+
+.dark-mode {
+    color: white;
+}

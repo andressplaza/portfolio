@@ -51,6 +51,31 @@ document.querySelectorAll('.groovy').forEach(function (element) {
 });
 
 
+// Detectar si hay una preferencia de tema en el almacenamiento local o sistema
+const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+document.body.classList.add(currentTheme === 'dark' ? 'dark-mode' : 'light-mode');
+
+// Función para alternar el tema
+const toggleTheme = () => {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    if (isDarkMode) {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+};
+
+// Escuchar el clic para alternar el modo
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+
+
+
 
 
 

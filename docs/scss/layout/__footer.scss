@@ -1,9 +1,4 @@
 footer {
-    color: #F0F6F6;
-    background-image: url('../img/blurry-gradient-haikei.png');
-    background-size: cover; /* Asegura que la imagen cubra el elemento */
-    background-position: center; /* Centra la imagen dentro del elemento */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
     padding: 2rem 0; /* Espaciado arriba y abajo */
     text-align: center; /* Centra el texto */
     border-top: 5px solid rgb(255, 254, 254);
@@ -21,11 +16,9 @@ footer {
 
 .footer-email {
     font-size: 0.9rem; /* Tamaño de fuente pequeño */
-    color: #F0F6F6; /* Color del texto del correo */
 }
 
 .footer-email-link {
-    color: #F0F6F6; /* Color del enlace del correo */
     text-decoration: none; /* Elimina el subrayado */
 }
 
@@ -41,11 +34,7 @@ footer {
 }
 
 .social-icon {
-    color: #F0F6F6;
     font-size: 1.5rem; /* Tamaño de los iconos */
     text-decoration: none; /* Elimina el subrayado */
 }
 
-.social-icon:hover {
-    color: #000; /* Cambia el color al pasar el cursor */
-}

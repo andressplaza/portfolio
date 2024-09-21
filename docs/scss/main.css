@@ -78,6 +78,34 @@
   transition: opacity 1s, transform 2s;
 }
 
+#sun-icon, #moon-icon {
+  display: none; /* Ambos ocultos por defecto */
+}
+
+.light-mode #moon-icon {
+  display: inline; /* Mostrar la luna en modo claro */
+}
+
+.dark-mode #sun-icon {
+  display: inline; /* Mostrar el sol en modo oscuro */
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+  background-color: #121212; /* Fondo oscuro */
+  color: #E0E0E0; /* Texto claro */
+}
+
+.dark-mode button {
+  background-color: #333333; /* Fondo de botón oscuro */
+  color: #FFFFFF; /* Texto de botón claro */
+  border: 1px solid #444444; /* Borde suave */
+}
+
+.dark-mode {
+  color: white;
+}
+
 .groovy {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -134,8 +162,45 @@ body {
   font-size: larger;
 }
 
-html, body {
-  background: #F0F6F6;
+:root {
+  --main-color: #1083D6;
+  --title-color: #2A3B47;
+  --text-color: #697477;
+  --light-text-color: #A0A7AC;
+  --body-color: #FBFBFE;
+}
+
+body {
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+a {
+  color: var(--main-color);
+}
+
+.subtitle {
+  color: var(--light-text-color);
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+button a {
+  text-decoration: none;
 }
 
 .container {
@@ -175,12 +240,6 @@ nav {
   margin-bottom: 10px;
   font-size: 3rem; /* Ajusta el tamaño de la fuente según sea necesario */
   font-weight: bold; /* Opcional: ajusta el peso de la fuente si es necesario */
-  background-image: url("../img/blurry-gradient-haikei.png"); /* Reemplaza con la ruta de tu imagen */
-  background-size: cover; /* Ajusta el tamaño de la imagen según el contenedor */
-  background-clip: text; /* Clipa el fondo a la forma del texto */
-  -webkit-background-clip: text; /* Necesario para compatibilidad con WebKit browsers (Chrome, Safari) */
-  color: transparent; /* Hace que el texto sea transparente para que solo se vea el fondo */
-  display: inline-block; /* Asegura que el fondo se ajuste al tamaño del texto */
 }
 
 .inicio h2 {
@@ -198,23 +257,8 @@ nav {
   margin-right: auto;
 }
 
-.cv-button {
+.cv-button a {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #fff;
-  background-image: url("../img/blurry-gradient-haikei.png");
-  background-size: cover; /* Asegura que la imagen cubra el elemento */
-  background-position: center; /* Centra la imagen dentro del elemento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  border: 3px solid #ffffff; /* Borde negro */
-  border-radius: 8px; /* Bordes ligeramente redondeados */
-  transition: background-position 0.5s ease;
-}
-
-.cv-button:hover {
-  background-position: right top;
 }
 
 .stack {
@@ -226,13 +270,11 @@ nav {
   display: block;
 }
 .stack h1 {
-  background-color: #F0F6F6;
   padding: 1rem;
   font-size: 2.5rem;
 }
 
 .datagrid-container {
-  background-color: #F0F6F6;
   height: auto;
   margin: auto;
   display: grid;
@@ -241,11 +283,6 @@ nav {
   padding: 2rem;
 }
 .datagrid-container .datagrid-item {
-  color: white;
-  background-image: url("../img/blurry-gradient-haikei.png");
-  background-size: cover;
-  background-position: center;
-  /* Evita que la imagen se repita */
   border: 2px solid #ffffff;
   padding: 20px;
   border-radius: 8px;
@@ -299,12 +336,10 @@ nav {
   text-align: center;
 }
 .contact .contact-content {
-  background-color: #f4f4f4;
   margin: 0 auto;
 }
 .contact .contact-content h1 {
   font-size: 3rem;
-  color: #333;
   margin-bottom: 1rem;
 }
 .contact .contact-content p {
@@ -314,24 +349,6 @@ nav {
 }
 .contact .contact-content .contact-button {
   display: inline-block;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  color: #000; /* Color del texto negro */
-  background-image: url("../img/blurry-gradient-haikei.png");
-  background-size: cover; /* Asegura que la imagen cubra el elemento */
-  background-position: center; /* Centra la imagen dentro del elemento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  border: 3px solid #ffffff; /* Borde negro */
-  border-radius: 8px; /* Bordes ligeramente redondeados */
-  transition: background-position 0.5s ease;
-}
-.contact .contact-content .contact-button a {
-  font-size: 1rem;
-  text-decoration: none;
-  color: #fff;
-}
-.contact .contact-content .contact-button:hover {
-  background-position: right top;
 }
 
 @media (max-width: 900px) {
@@ -374,11 +391,6 @@ nav {
   }
 }
 footer {
-  color: #F0F6F6;
-  background-image: url("../img/blurry-gradient-haikei.png");
-  background-size: cover; /* Asegura que la imagen cubra el elemento */
-  background-position: center; /* Centra la imagen dentro del elemento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
   padding: 2rem 0; /* Espaciado arriba y abajo */
   text-align: center; /* Centra el texto */
   border-top: 5px solid rgb(255, 254, 254);
@@ -396,11 +408,9 @@ footer {
 
 .footer-email {
   font-size: 0.9rem; /* Tamaño de fuente pequeño */
-  color: #F0F6F6; /* Color del texto del correo */
 }
 
 .footer-email-link {
-  color: #F0F6F6; /* Color del enlace del correo */
   text-decoration: none; /* Elimina el subrayado */
 }
 
@@ -416,11 +426,6 @@ footer {
 }
 
 .social-icon {
-  color: #F0F6F6;
   font-size: 1.5rem; /* Tamaño de los iconos */
   text-decoration: none; /* Elimina el subrayado */
-}
-
-.social-icon:hover {
-  color: #000; /* Cambia el color al pasar el cursor */
 }/*# sourceMappingURL=main.css.map */
