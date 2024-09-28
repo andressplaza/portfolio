@@ -73,7 +73,7 @@ body.dark-mode {
   --body-color: #121212;
   --text-color: #E0E0E0;
   --title-color: #FFFFFF;
-  --main-color: #bc13fe;
+  --main-color: #c4a7e7;
   --light-text-color: #BBBBBB;
 }
 
@@ -206,6 +206,10 @@ body.dark-mode .fa-linkedin {
   color: var(--button-text-color);
   opacity: 0.8;
   transition: color 0.3s, opacity 0.3s;
+  text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 40px var(--main-color), 0 0 60px var(--main-color);
+}
+body.dark-mode .fa-sun {
+  text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 40px var(--main-color), 0 0 60px var(--main-color);
 }
 body.dark-mode footer {
   color: var(--text-color);
@@ -234,14 +238,6 @@ body.light-mode footer .fa-linkedin {
   }
   100% {
     text-shadow: 0 0 2px #f5f5f5, 0 0 5px #f5f5f5, 0 0 8px #f5f5f5, 0 0 15px var(--main-color), 0 0 25px var(--main-color), 0 0 35px var(--main-color), 0 0 45px var(--main-color), 0 0 60px var(--main-color);
-  }
-}
-@keyframes pulsate-small {
-  0% {
-    text-shadow: 0 0 0.5px #f5f5f5, 0 0 1px #f5f5f5, 0 0 2px #f5f5f5, 0 0 3px var(--main-color), 0 0 6px var(--main-color), 0 0 8px var(--main-color);
-  }
-  100% {
-    text-shadow: 0 0 1px #f5f5f5, 0 0 2px #f5f5f5, 0 0 4px #f5f5f5, 0 0 8px var(--main-color), 0 0 12px var(--main-color), 0 0 16px var(--main-color);
   }
 }
 .groovy {

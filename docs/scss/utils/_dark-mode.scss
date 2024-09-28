@@ -46,24 +46,39 @@ body {
             border: 2px solid var(--main-color);
         }
 
-      
+
         .fa-github,
         .fa-linkedin {
             color: var(--button-text-color);
             opacity: 0.8;
             transition: color 0.3s, opacity 0.3s;
+            text-shadow:
+                0 0 5px var(--main-color),
+                0 0 10px var(--main-color),
+                0 0 20px var(--main-color),
+                0 0 40px var(--main-color),
+                0 0 60px var(--main-color);
         }
 
-        footer{
-            color: var( --text-color) ;
+        .fa-sun {
+            text-shadow:
+            0 0 5px var(--main-color),
+            0 0 10px var(--main-color),
+            0 0 20px var(--main-color),
+            0 0 40px var(--main-color),
+            0 0 60px var(--main-color);
+        }
+
+
+        footer {
+            color: var(--text-color);
             background-color: var(--body-color);
             border-top: 1.5px solid var(--main-color);
         }
     }
 
     &.light-mode {
-        .fa-github 
-        {
+        .fa-github {
             color: var(--light-text-color);
             transition: color 0.3s, opacity 0.3s;
         }
@@ -74,7 +89,7 @@ body {
             color: rgb(66, 66, 241);
         }
 
-        footer .fa-github{
+        footer .fa-github {
             color: var(--body-color);
         }
 
@@ -87,9 +102,9 @@ body {
 @keyframes pulsate {
     0% {
         text-shadow:
-            0 0 1px #f5f5f5,  
-            0 0 2px #f5f5f5,    
-            0 0 3px #f5f5f5,    
+            0 0 1px #f5f5f5,
+            0 0 2px #f5f5f5,
+            0 0 3px #f5f5f5,
             0 0 5px var(--main-color),
             0 0 12px var(--main-color),
             0 0 18px var(--main-color),
@@ -99,9 +114,9 @@ body {
 
     100% {
         text-shadow:
-            0 0 2px #f5f5f5,   
-            0 0 5px #f5f5f5,    
-            0 0 8px #f5f5f5,  
+            0 0 2px #f5f5f5,
+            0 0 5px #f5f5f5,
+            0 0 8px #f5f5f5,
             0 0 15px var(--main-color),
             0 0 25px var(--main-color),
             0 0 35px var(--main-color),
@@ -109,28 +124,3 @@ body {
             0 0 60px var(--main-color);
     }
 }
-
-
-@keyframes pulsate-small {
-    0% {
-        text-shadow:
-            0 0 0.5px #f5f5f5,   /* Reducción del tamaño de la sombra blanca */
-            0 0 1px #f5f5f5,     
-            0 0 2px #f5f5f5,     
-            0 0 3px var(--main-color),  /* Reducción de las sombras del color principal */
-            0 0 6px var(--main-color),
-            0 0 8px var(--main-color);
-    }
-
-    100% {
-        text-shadow:
-            0 0 1px #f5f5f5,    /* Reducción de las sombras al máximo */
-            0 0 2px #f5f5f5,    
-            0 0 4px #f5f5f5,    
-            0 0 8px var(--main-color),
-            0 0 12px var(--main-color),
-            0 0 16px var(--main-color);
-    }
-}
-
-
