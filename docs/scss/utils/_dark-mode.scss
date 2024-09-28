@@ -46,16 +46,12 @@ body {
             border: 2px solid var(--main-color);
         }
 
-        .fa-sun{
-            animation: pulsate-small 1s infinite alternate;
-        }
-
+      
         .fa-github,
         .fa-linkedin {
             color: var(--button-text-color);
             opacity: 0.8;
             transition: color 0.3s, opacity 0.3s;
-            animation: pulsate-small 1s infinite alternate;
         }
 
         footer{

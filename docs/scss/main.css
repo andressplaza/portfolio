@@ -156,8 +156,7 @@ button:hover {
 }
 
 #name {
-  white-space: nowrap;
-  font-size: 6vw;
+  font-size: 8vw; /* Tamaño mínimo, tamaño relativo, tamaño máximo */
 }
 
 #sun-icon,
@@ -202,15 +201,11 @@ body.dark-mode button {
   background-color: var(--button-bg-color);
   border: 2px solid var(--main-color);
 }
-body.dark-mode .fa-sun {
-  animation: pulsate-small 1s infinite alternate;
-}
 body.dark-mode .fa-github,
 body.dark-mode .fa-linkedin {
   color: var(--button-text-color);
   opacity: 0.8;
   transition: color 0.3s, opacity 0.3s;
-  animation: pulsate-small 1s infinite alternate;
 }
 body.dark-mode footer {
   color: var(--text-color);
