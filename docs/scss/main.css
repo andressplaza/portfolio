@@ -132,7 +132,6 @@ button a {
 
 button:hover {
   background-color: var(--button-hover-bg-color, white); /* Cambia el fondo al hacer hover */
-  color: var(--main-color); /* Cambia el color del texto al hacer hover */
   box-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color); /* Resplandor */
   transform: scale(1.05); /* Leve aumento de tamaño */
 }
