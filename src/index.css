@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #121212;
+    color: #fff;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        /* Ajustamos el tamaño en móviles */
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 1rem;
+        /* Ajustamos el tamaño de párrafos en móviles */
+    }
+}

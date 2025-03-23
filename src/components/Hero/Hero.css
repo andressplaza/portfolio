@@ -1,0 +1,20 @@
+.hero-container {
+  height: calc(100vh - 64px); /* Resta la altura del Nav en pantallas grandes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-container > h1 {
+  font-size: clamp(2rem, 5vw, 9rem);
+}
+
+
+/* Ajustar la altura en pantallas menores a 600px */
+@media (max-width: 600px) {
+  .hero-container {
+      height: 100vh;
+  }
+}

@@ -1,0 +1,50 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    /* height: 100vh; */
+    justify-content: center;
+
+}
+
+.carousel-icon-container {
+    background-color: transparent;
+}
+
+.carousel-indicators-container.round {
+    z-index: 0;
+
+}
+
+.about-content {
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+}
+
+.carousel-container {
+    border: none;
+}
+
+
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    .about-content {
+        max-width: 50%;
+    }
+}
