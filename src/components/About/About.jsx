@@ -1,39 +1,32 @@
 import Carousel from '../shared/Carousel/Carousel';
 import './About.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaravel, faReact, faShopify } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faCubes, faServer, faTools } from '@fortawesome/free-solid-svg-icons';
+import { faNetworkWired, faCogs, faDatabase, faServer, faBrain, faProjectDiagram, faTools, faVial } from '@fortawesome/free-solid-svg-icons';
 
 const DEFAULT_ITEMS = [
-  { id: 1, title: 'Laravel', description: 'Framework PHP para desarrollo backend robusto', icon: <FontAwesomeIcon icon={faLaravel} size="3x" /> },
-  { id: 2, title: 'React.js', description: 'Biblioteca de JavaScript para interfaces dinámicas', icon: <FontAwesomeIcon icon={faReact} size="3x" /> },
-  { id: 3, title: 'Shopify Development', description: 'Personalización de tiendas Shopify, desarrollo de temas y apps', icon: <FontAwesomeIcon icon={faShopify} size="3x" /> },
-  { id: 4, title: 'Bases de Datos', description: 'Optimización y diseño de bases de datos SQL y NoSQL', icon: <FontAwesomeIcon icon={faDatabase} size="3x" /> },
-  { id: 5, title: 'Arquitectura Hexagonal', description: 'Enfoque modular para sistemas escalables', icon: <FontAwesomeIcon icon={faCubes} size="3x" /> },
-  { id: 6, title: 'DevOps y Entorno', description: 'Manejo de Docker, GitLab Pipelines e integración continua', icon: <FontAwesomeIcon icon={faServer} size="3x" /> },
-  { id: 7, title: 'Patrones de Diseño', description: 'Aplicación de DDD, CQRS y principios SOLID en proyectos', icon: <FontAwesomeIcon icon={faTools} size="3x" /> }
+  { id: 1, title: 'Arquitectura de Software', description: 'Diseño de sistemas escalables y mantenibles con principios sólidos', icon: <FontAwesomeIcon icon={faProjectDiagram} size="3x" /> },
+  { id: 2, title: 'Optimización de Sistemas', description: 'Mejora del rendimiento y la eficiencia en aplicaciones y bases de datos', icon: <FontAwesomeIcon icon={faCogs} size="3x" /> },
+  { id: 3, title: 'APIs y Conectividad', description: 'Desarrollo e integración de APIs REST, WebSockets y MCP para ecosistemas conectados', icon: <FontAwesomeIcon icon={faNetworkWired} size="3x" /> },
+  { id: 4, title: 'Bases de Datos', description: 'Gestión, optimización y modelado de datos en entornos SQL y NoSQL', icon: <FontAwesomeIcon icon={faDatabase} size="3x" /> },
+  { id: 5, title: 'Testing', description: 'Pruebas automatizadas, unitarias y de integración para asegurar calidad del software', icon: <FontAwesomeIcon icon={faVial} size="3x" /> },
+  { id: 6, title: 'Inteligencia Artificial', description: 'Exploración de modelos de IA aplicados a automatización y análisis de datos', icon: <FontAwesomeIcon icon={faBrain} size="3x" /> },
+  { id: 7, title: 'Patrones y Buenas Prácticas', description: 'Uso de POO, DDD, CQRS y otros enfoques para código robusto', icon: <FontAwesomeIcon icon={faTools} size="3x" /> }
 ];
-
 
 const About = () => {
   return (
-    <section className="about-container">
+    <section id='about' className="about-container">
       <div className="about-content">
         <h2>Sobre mí</h2>
         <p>
-          Backend dev con experiencia en <strong>PHP</strong>, <strong>Laravel</strong> y <strong>React.js</strong>. ¡Me encanta crear sistemas escalables! 🚀
+          Soy un desarrollador de software especializado en el backend, centrado en la creación de sistemas escalables, seguros y eficientes. Me apasiona la optimización del rendimiento, la arquitectura de software y la integración de APIs.
         </p>
         <p>
-          También tengo experiencia en <strong>Shopify</strong>, personalizando temas y creando apps. 🛒
+          Trabajo con estructuras limpias, patrones de diseño y automatización de procesos para mejorar la estabilidad y el mantenimiento de los proyectos.
         </p>
         <p>
-          Me apasiona entender cómo funciona un proyecto y guiar al equipo hacia el éxito. 💡
+          También tengo interés en la Inteligencia Artificial y su aplicación en soluciones backend, así como en la evolución de las APIs MCP y su impacto en la conectividad digital.
         </p>
-        <p>
-          En mi tiempo libre, disfruto viajar ✈️ y hacer <strong>Crossfit</strong>, ¡para mantener el cuerpo y la mente en forma! 💪
-        </p>
-
-
       </div>
       <div className="carousel-container">
         <Carousel
