@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import svgl from "../../public/svgl.png";
-import stockin from "../../public/stockin.png";
+import vesty from "../../public/vesty.png";
 import agora from "../../public/agora.png";
-import tron from "../../public/tron.png";
+import githubua from "../../public/github_user_activity.png";
+import proxy from "../../public/catching_proxy.png";
 
 interface Project {
   title: string;
-  image: ImageMetadata;
+  image: any;
   preview: string;
   status: string;
 }
@@ -22,20 +22,20 @@ const projects: Project[] = [
   },
   {
     title: "Vesty Landing Page",
-    image: stockin as ImageMetadata,
+    image: vesty as ImageMetadata,
     preview: "https://github.com/andressplaza/closy_landing",
     status: "Landing page de una app que estoy ayudando como contribuidor",
   },
   {
     title: "Github User Activity",
-    image: svgl as ImageMetadata,
+    image: githubua as ImageMetadata,
     preview: "https://github.com/andressplaza/github-user-activity",
     status:
       "Mediante la linea de comandos es capaz de obtener la actividad de un usuario via la API de Github.",
   },
   {
     title: "Catching Proxy",
-    image: tron as ImageMetadata,
+    image: proxy as ImageMetadata,
     preview: "https://github.com/andressplaza/CatchingProxy",
     status:
       "Caching Proxy Build a caching server that caches responses from other servers.",
